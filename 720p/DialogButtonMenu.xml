@@ -96,8 +96,20 @@
 					<onclick>XBMC.Powerdown()</onclick>
 					<include>dialog_Button-list</include>
 				</control>
-				<!--minimize-->
 				<control type="button" id="508">
+					<width>350</width>
+					<label>$LOCALIZE[13017]</label>
+					<onclick>XBMC.InhibitIdleShutdown(true)</onclick>
+					<visible>System.HasShutdown +!System.IsInhibit</visible>
+				</control>
+				<control type="button" id="509">
+					<width>350</width>
+					<label>$LOCALIZE[13018]</label>
+					<onclick>XBMC.InhibitIdleShutdown(false)</onclick>
+					<visible>System.HasShutdown + System.IsInhibit</visible>
+				</control>
+				<!--minimize-->
+				<control type="button" id="510">
 					<width>350</width>
 					<label>$LOCALIZE[13014]</label>
 					<onclick>Dialog.Close(shutdownmenu)</onclick>
