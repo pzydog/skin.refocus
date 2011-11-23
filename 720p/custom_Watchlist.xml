@@ -35,7 +35,7 @@
 				<control type="label">
 					<posx>20</posx>
 					<width>1100</width>
-					<label>currently watching</label>
+					<label>$LOCALIZE[31097]</label>
 					<align>left</align>
 					<font>titleLow</font>
 					<textcolor>Color2</textcolor>
@@ -100,7 +100,7 @@
 					<posy>152</posy>
 					<width>18</width>
 					<height>18</height>
-					<texture>addons/nextaired/ScrollIndicator.png</texture>
+					<texture>navigation/scrollIndicatorRight.png</texture>
 					<aspectratio align="left">keep</aspectratio>
 					<include>fadeinout</include>
 					<visible>Control.HasFocus(60) + Container(60).HasNext</visible>
@@ -112,7 +112,7 @@
 				<control type="label">
 					<posx>20</posx>
 					<width>1100</width>
-					<label>recommended movies</label>
+					<label>$LOCALIZE[31098]</label>
 					<align>left</align>
 					<font>titleLow</font>
 					<textcolor>Color2</textcolor>
@@ -177,7 +177,7 @@
 					<posy>152</posy>
 					<width>18</width>
 					<height>18</height>
-					<texture>addons/nextaired/ScrollIndicator.png</texture>
+					<texture>navigation/scrollIndicatorRight.png</texture>
 					<aspectratio align="left">keep</aspectratio>
 					<include>fadeinout</include>
 					<visible>Control.HasFocus(61) + Container(61).HasNext</visible>
@@ -197,13 +197,19 @@
 					<control type="label">
 						<posy>28</posy>
 						<width>380</width>
+						<label>$INFO[Container(60).ListItem.Property(Episode)]</label>
+						<include>info_Sub</include>
+					</control>
+					<control type="label">
+						<posy>50</posy>
+						<width>380</width>
 						<label>$INFO[Container(60).ListItem(0).Label2]</label>
 						<include>info_Sub</include>
 					</control>
 					<control type="textbox">
-						<posy>55</posy>
+						<posy>80</posy>
 						<width>380</width>
-						<height>470</height>
+						<height>435</height>
 						<label>$INFO[Container(60).ListItem.Property(Plot)]</label>
 						<include>description_Small</include>
 					</control>
@@ -218,13 +224,19 @@
 					<control type="label">
 						<posy>28</posy>
 						<width>380</width>
+						<label>$INFO[Container(61).ListItem.Property(Info)]</label>
+						<include>info_Sub</include>
+					</control>
+					<control type="label">
+						<posy>50</posy>
+						<width>380</width>
 						<label>$INFO[Container(61).ListItem(0).Label2]</label>
 						<include>info_Sub</include>
 					</control>
 					<control type="textbox">
-						<posy>55</posy>
+						<posy>80</posy>
 						<width>380</width>
-						<height>470</height>
+						<height>435</height>
 						<label>$INFO[Container(61).ListItem.Property(Plot)]</label>
 						<include>description_Small</include>
 					</control>

@@ -2,10 +2,10 @@
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<views>50,51,52,521,522,53,531,54,541,57,571,574,575,576,592</views>
-	
-	<onload>RunScript(script.tv.show.next.aired,backend=True)</onload>
-	<onload>RunScript(script.watchlist)</onload>
-	
+
+	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
+	<onload condition="System.HasAddon(script.watchlist)">RunScript(script.watchlist)</onload>
+
 	<controls>
 		<include>global_Background</include>
 		<include>global_Includes</include>
@@ -67,6 +67,11 @@
 						<include>overlay_UnWatched</include>
 						<visible>!Container.Content(files)</visible>
 					</control>
+					<control type="image">
+						<posx>532</posx>
+						<posy>295</posy>
+						<include>overlay_Resumable-list</include>
+					</control>
 				</control>
 				<control type="group">
 					<posx>685</posx>
@@ -106,6 +111,11 @@
 						<posy>591</posy>
 						<include>overlay_UnWatched</include>
 					</control>
+					<control type="image">
+						<posx>397</posx>
+						<posy>591</posy>
+						<include>overlay_Resumable-list</include>
+					</control>
 				</control>
 			</control>
 			<!---files--->
@@ -130,6 +140,12 @@
 						<animation effect="rotate" end="90" time="0" condition="True">Conditional</animation>
 						<include>overlay_UnWatched</include>
 						<visible>!SubString(Container.FolderPath,special://videoplaylists)</visible>
+					</control>
+					<control type="image">
+						<posx>-54</posx>
+						<posy>526</posy>
+						<animation effect="rotate" end="90" time="0" condition="True">Conditional</animation>
+						<include>overlay_Resumable-list</include>
 					</control>
 				</control>
 			</control>

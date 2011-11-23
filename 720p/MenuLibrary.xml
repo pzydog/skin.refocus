@@ -334,7 +334,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>42</height>
-					<visible>[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + SubString(Container.FolderPath,videodb)] | [Container.Content(movies) + SubString(Container.FolderPath,plugin://)]</visible>
+					<visible>[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + SubString(Container.FolderPath,videodb)] | [Container.Content(movies) + SubString(Container.FolderPath,plugin://)] | SubString(Container.FolderPath,special://skin/playlists/)</visible>
 					<control type="button" id="403">
 						<label>$LOCALIZE[31003]</label>
 						<onclick>Container.SetViewMode(52)</onclick>
@@ -399,7 +399,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>42</height>
-					<visible>[Container.Content(episodes) | [Container.Content(files) + Container.HasFiles)] | [SubString(Container.FolderPath,plugin://) + Container.HasFiles + !Container.Content(movies)]]</visible>
+					<visible>[Container.Content(episodes) | Container.Content(musicvideos) | [Container.Content(files) + Container.HasFiles)] | [SubString(Container.FolderPath,plugin://) + Container.HasFiles + !Container.Content(movies)]]</visible>
 					<control type="button" id="406">
 						<label>$LOCALIZE[31014]</label>
 						<onclick>Container.SetViewMode(575)</onclick>
@@ -449,7 +449,7 @@
 					<height>42</height>
 					<visible>Container.Content(tvshows) + Skin.HasSetting(banners.enable) + !substring(Container.FolderPath,plugin://)</visible>
 					<control type="button" id="409">
-						<label>$LOCALIZE[31007]</label>
+						<label>$LOCALIZE[31004]</label>
 						<onclick>Container.SetViewMode(54)</onclick>
 						<onclick>SetFocus(1)</onclick>
 						<onclick>SetFocus(54)</onclick>
