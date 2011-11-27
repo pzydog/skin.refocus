@@ -3,6 +3,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload>RunScript(script.watchlist,movies=true&amp;episodes=true&amp;limit=25)</onload>
 	<controls>
+	<!---fanart------>
 		<control type="image">
 			<include>screen_Dimensions</include>
 			<texture background="true">$INFO[Container(60).ListItem.Property(Fanart)]</texture>
@@ -17,19 +18,42 @@
 			<fadetime>fadetime_Fanart</fadetime>
 			<visible>Control.HasFocus(61) + Skin.HasSetting(fanart.global) + !IsEmptyContainer(60).ListItem.Property(Fanart)) + ![Player.HasVideo + Skin.HasSetting(backgroundvideo.global)]</visible>
 		</control>
+	<!---includes------>
 		<include>global_Background</include>
 		<include>global_Includes</include>
 		<include>windowTitle_Video</include>
 		<include>PageControls</include>
 		<include>nav_Indicator</include>
+	<!---window title--->
 		<control type="label">
-			<label>watchlist</label>
+			<label>$LOCALIZE[157] [COLOR=Color2]$LOCALIZE[31086][/COLOR]</label>
 			<include>windowTitle</include>
+		</control>
+	<!---item count------>
+		<control type="label">
+			<posx>38</posx>
+			<posy>58</posy>
+			<width>500</width>
+			<label>[B]$INFO[Container(60).NumItems][/B] $LOCALIZE[31116]</label>
+			<font>smallerCaps</font>
+			<textcolor>Color3</textcolor>
+			<include>transition_WindowTitle</include>
+			<visible>Control.HasFocus(60)</visible>
+		</control>
+		<control type="label">
+			<posx>38</posx>
+			<posy>58</posy>
+			<width>500</width>
+			<label>[B]$INFO[Container(61).NumItems][/B] $LOCALIZE[31116]</label>
+			<font>smallerCaps</font>
+			<textcolor>Color3</textcolor>
+			<include>transition_WindowTitle</include>
+			<visible>Control.HasFocus(61)</visible>
 		</control>
 		<!---TV SHOWS--->
 		<control type="group">
 			<posx>30</posx>
-			<posy>90</posy>
+			<posy>100</posy>
 			<include>transition_Container</include>
 			<control type="group" id="50">
 				<control type="label">
@@ -43,7 +67,7 @@
 				<control type="list" id="60">
 					<viewtype label="535">list</viewtype> 	
 					<posy>25</posy>
-					<width>768</width>
+					<width>780</width>
 					<height>300</height>
 					<onup>51</onup>
 					<ondown>51</ondown>
@@ -120,7 +144,7 @@
 				<control type="list" id="61">
 					<viewtype label="535">list</viewtype> 	
 					<posy>25</posy>
-					<width>768</width>
+					<width>780</width>
 					<height>275</height>
 					<onup>50</onup>
 					<ondown>52</ondown>
@@ -198,6 +222,7 @@
 						<posy>28</posy>
 						<width>380</width>
 						<label>$INFO[Container(60).ListItem.Property(Episode)]</label>
+						<textcolor>Color3</textcolor>
 						<include>info_Sub</include>
 					</control>
 					<control type="label">

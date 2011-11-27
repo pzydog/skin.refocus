@@ -1,9 +1,7 @@
 ﻿<window id="0">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-
 	<controls>
-	
 	<!-- global background --->
 		<control type="largeimage">
 			<include>screen_Dimensions</include>
@@ -70,10 +68,10 @@
 		</control>
 	<!---time------>
 		<control type="group">
-			<include>fadeinout</include>
-			<visible>Skin.HasSetting(home.time) + ![Window.IsActive(videoscan) | Window.IsActive(musicscan) | Window.IsActive(infodialog)]</visible>
-			<animation effect="slide" start="0" end="-55" condition="Player.Muted | !IntegerGreaterThan(Player.Volume,0)">Conditional</animation>
 			<include>clock</include>
+			<include>fadeinout</include>
+			<include>toggle_ToastMute</include>
+			<visible>Skin.HasSetting(home.time) + ![Window.IsActive(videoscan) | Window.IsActive(musicscan) | Window.IsActive(infodialog)]</visible>
 		</control>	
 	<!---menu------>
 		<include>HomeMenu</include>
