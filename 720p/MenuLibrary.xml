@@ -87,12 +87,26 @@
 		<control type="group">
 			<width>220</width>
 			<height>42</height>
+			<visible>!Skin.HasSetting(search.addon)</visible>
 			<control type="button" id="8">
+				<label>$LOCALIZE[137]</label>
+				<onup>7</onup>
+				<ondown>9</ondown>
+				<onright>50</onright>
+				<include>button_Menu</include>
+			</control>
+		</control>
+		<control type="group">
+			<width>220</width>
+			<height>42</height>
+			<visible>Skin.HasSetting(search.addon)</visible>
+			<control type="button" id="9">
 				<label>$LOCALIZE[137]</label>
 				<onup>7</onup>
 				<ondown>19</ondown>
 				<onright>50</onright>
 				<include>button_Menu</include>
+				<onclick>RunAddon(script.globalsearch)</onclick>
 			</control>
 		</control>
 		<!--filter-->
@@ -101,7 +115,7 @@
 			<height>42</height>
 			<control type="button" id="19">
 				<label>$LOCALIZE[587]</label>
-				<onup>8</onup>
+				<onup>9</onup>
 				<ondown>16</ondown>
 				<onright>50</onright>
 				<include>button_Menu</include>
@@ -383,7 +397,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>42</height>
-					<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb) | SubString(Container.FolderPath,special://profile/playlists) | SubString(Container.FolderPath,plugin://)]</visible>
+					<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb) | SubString(Container.FolderPath,special://profile/playlists) | SubString(Container.FolderPath,special://skin/playlists) | SubString(Container.FolderPath,plugin://)]</visible>
 					<control type="button" id="405">
 						<label>$LOCALIZE[31014]</label>
 						<onclick>Container.SetViewMode(57)</onclick>

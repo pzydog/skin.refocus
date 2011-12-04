@@ -1,31 +1,33 @@
-﻿<window type="dialog" id="62">
+﻿<window type="dialog" id="64">
 	<defaultcontrol always="true">100</defaultcontrol>
-	<include>dialogOpen</include>
+	<animation type="WindowOpen" reversible="false">
+		<effect type="zoom" start="90" end="100" time="200" center="1000,360" tween="Sine" easing="InOut" />
+		<effect type="fade" start="0" end="100" time="200" />
+	</animation>
+	<animation type="WindowClose" reversible="false">
+		<effect type="zoom" start="100" end="90" time="200" center="1000,360" tween="Sine" easing="InOut" />
+		<effect type="fade" start="100" end="0" time="200" />
+	</animation>
 	<coordinates>
 		<system>1</system>
-		<posx>415</posx>
-		<posy>185</posy>
+		<posx>930</posx>
+		<posy>243</posy>
 	</coordinates>
 	<controls>
-		<control type="image">
-			<width>450</width>
-			<height>350</height>
-			<include>dialogWindow</include>
-		</control>
-		<control type="label" id="1">
-			<width>382</width>
-			<label>$LOCALIZE[21435]</label>
-			<include>dialog_Windowtitle</include>
+		<control type="image" id="997">
+			<width>280</width>
+			<height>235</height>
+			<texture border="20">dialogs/menuLeft.png</texture>
 		</control>
 		<control type="group">
-			<posx>19</posx>
-			<posy>75</posy>
+			<posx>9</posx>
+			<posy>17</posy>
 			<control type="image">
-				<width>413</width>
+				<width>250</width>
 				<include>dialog_Separator</include>
 			</control>
 			<control type="list" id="100">
-				<width>413</width>
+				<width>250</width>
 				<height>320</height>
 				<onup>100</onup>
 				<ondown>100</ondown>
@@ -62,36 +64,40 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<!--refresh-->
+					<!--movies-->
 					<item id="1">
-						<label>$LOCALIZE[31942]</label>
+						<label>$LOCALIZE[342]</label>
 						<onclick>Close</onclick>
-						<onclick>SendClick(2003,6)</onclick>
+						<onclick>ActivateWindow(VideoLibrary,movietitles)</onclick>
+						<onclick>SendClick(8)</onclick>
 					</item>
-					<!--thumbnail-->
+					<!--tvshows-->
 					<item id="2">
-						<label>$LOCALIZE[31943]</label>
-						<onclick>SendClick(2003,10)</onclick>
+						<label>$LOCALIZE[20343]</label>
+						<onclick>Close</onclick>
+						<onclick>ActivateWindow(VideoLibrary,TvShowTitles)</onclick>
+						<onclick>SendClick(8)</onclick>
 					</item>
-					<!--fanart-->
+					<!--artists-->
 					<item id="3">
-						<label>$LOCALIZE[31944]</label>
-						<onclick>SendClick(2003,12)</onclick>
-						<visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+						<label>$LOCALIZE[133]</label>
+						<onclick>Close</onclick>
+						<onclick>ActivateWindow(MusicLibrary,Artists)</onclick>
+						<onclick>SendClick(8)</onclick>
 					</item>
-					<!--banner-->
+					<!--albums-->
 					<item id="4">
-						<label>$LOCALIZE[31945]</label>
+						<label>$LOCALIZE[132]</label>
 						<onclick>Close</onclick>
-						<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,silent=true,banner)</onclick>
-						<visible>Container.Content(tvshows)</visible>
+						<onclick>ActivateWindow(MusicLibrary,Albums)</onclick>
+						<onclick>SendClick(8)</onclick>
 					</item>
-					<!--logo-->
+					<!--songs-->
 					<item id="5">
-						<label>$LOCALIZE[31946]</label>
+						<label>$LOCALIZE[134]</label>
 						<onclick>Close</onclick>
-						<onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,silent=true,clearlogo)</onclick>
-						<visible>Container.Content(tvshows)</visible>
+						<onclick>ActivateWindow(MusicLibrary,Artists)</onclick>
+						<onclick>SendClick(8)</onclick>
 					</item>
 				</content>
 			</control>
