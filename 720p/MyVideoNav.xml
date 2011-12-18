@@ -42,7 +42,7 @@
 				<control type="group">
 					<posx>655</posx>
 					<posy>68</posy>
-					<visible>!stringcompare(container.folderpath,plugin://plugin.video.apple.movie.trailers.lite/) + [[Container.Content(movies) | Container.Content(tvshows)] + Skin.HasSetting(view.list.fanart)] | Container.Content(artists) | Container.Content(musicvideos) | Container.Content(episodes)</visible>
+					<visible>!StringCompare(Container.FolderPath,plugin://plugin.video.apple.movie.trailers.lite/) + [[Container.Content(movies) | Container.Content(tvshows)] + Skin.HasSetting(view.list.fanart)] | Container.Content(artists) | Container.Content(musicvideos) | Container.Content(episodes)</visible>
 					<control type="image">
 						<include>frame_Landscape-List</include>
 						<visible>!IsEmpty(Container.FolderName) + !Container.Content(files)</visible>
@@ -58,16 +58,16 @@
 						<height>96</height>
 						<include>art_TVShowLogo</include>
 					</control>
-					<control type="image">
+					<control type="group">
 						<posx>532</posx>
 						<posy>295</posy>
-						<include>overlay_UnWatched</include>
-						<visible>!Container.Content(files)</visible>
-					</control>
-					<control type="image">
-						<posx>532</posx>
-						<posy>295</posy>
-						<include>overlay_Resumable-list</include>
+						<control type="image">
+							<include>overlay_UnWatched</include>
+							<visible>!Container.Content(files)</visible>
+						</control>
+						<control type="image">
+							<include>overlay_Resumable-list</include>
+						</control>
 					</control>
 				</control>
 				<control type="group">
@@ -95,7 +95,7 @@
 				<posx>750</posx>
 				<posy>65</posy>
 				<control type="group">
-					<visible>[Container.Content(movies) | Container.Content(tvshows)] + [!Skin.HasSetting(view.list.fanart) | SubString(Container.FolderPath,plugin://)] | Container.Content(actors) | Container.Content(seasons)</visible>
+					<visible>[Container.Content(movies) | Container.Content(tvshows)] + [!Skin.HasSetting(view.list.fanart) | SubString(Container.FolderPath,plugin://)] | Container.Content(actors) | [Container.Content(seasons) + !SubString(Container.FolderPath,plugin://)]</visible>
 					<control type="image">
 						<include>frame_Poster-List</include>
 					</control>
@@ -103,15 +103,15 @@
 						<texture background="true">$VAR[thumb_Portrait.Condition]</texture>
 						<include>thumb_Portrait-List</include>
 					</control>
-					<control type="image">
+					<control type="group">
 						<posx>397</posx>
 						<posy>591</posy>
-						<include>overlay_UnWatched</include>
-					</control>
-					<control type="image">
-						<posx>397</posx>
-						<posy>591</posy>
-						<include>overlay_Resumable-list</include>
+						<control type="image">
+							<include>overlay_UnWatched</include>
+						</control>
+						<control type="image">
+							<include>overlay_Resumable-list</include>
+						</control>
 					</control>
 				</control>
 			</control>
