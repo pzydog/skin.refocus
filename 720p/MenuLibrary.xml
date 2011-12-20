@@ -109,6 +109,7 @@
 				<ondown>9</ondown>
 				<onright>50</onright>
 				<include>button_Menu</include>
+				<onclick>SetFocus(300)</onclick>
 			</control>
 		</control>
 		<control type="group">
@@ -134,6 +135,7 @@
 				<ondown>16</ondown>
 				<onright>50</onright>
 				<include>button_Menu</include>
+				<onclick>SetFocus(300)</onclick>
 			</control>
 		</control>
 		<!--partymode-->
@@ -157,7 +159,7 @@
 			<control type="grouplist" id="30">
 				<posx>-275</posx>
 				<posy>20</posy>
-				<visible allowhiddenfocus="true">ControlGroup(6000).HasFocus + !ControlGroup(40).HasFocus + !Window.IsActive(103) + !Skin.HasSetting(global.kiosk)</visible>
+				<visible allowhiddenfocus="true">ControlGroup(6000).HasFocus + !ControlGroup(40).HasFocus + !Skin.HasSetting(global.kiosk) + !Window.IsActive(virtualkeyboard)</visible>
 				<onright>50</onright>
 				<include>MenuOpen</include>
 				<include>transition_Menu</include>
@@ -218,6 +220,36 @@
 						<onclick>Container.SetViewMode(521)</onclick>
 						<onclick>Skin.ToggleSetting(view.slide.fanart)</onclick>
 						<onclick>SetFocus(521)</onclick>
+						<include>button_Menu</include>
+					</control>
+				</control>
+				<!--SLIDE: artist landscape-->
+				<control type="group">
+					<width>220</width>
+					<height>42</height>
+					<visible>Container.Content(artists) + Control.IsVisible(522)</visible>
+					<control type="button" id="90">
+						<label>$LOCALIZE[31039]</label>
+						<onup>31</onup>
+						<ondown>1</ondown>
+						<onright>50</onright>
+						<onclick>Container.SetViewMode(521)</onclick>
+						<onclick>SetFocus(521)</onclick>
+						<include>button_Menu</include>
+					</control>
+				</control>
+				<!--SLIDE: artist thumbs-->
+				<control type="group">
+					<width>220</width>
+					<height>42</height>
+					<visible>Container.Content(artists) + Control.IsVisible(521)</visible>
+					<control type="button" id="90">
+						<label>$LOCALIZE[31059]</label>
+						<onup>31</onup>
+						<ondown>1</ondown>
+						<onright>50</onright>
+						<onclick>Container.SetViewMode(522)</onclick>
+						<onclick>SetFocus(522)</onclick>
 						<include>button_Menu</include>
 					</control>
 				</control>
@@ -305,17 +337,29 @@
 				<control type="group">
 					<width>220</width>
 					<height>42</height>
-					<visible>Control.IsVisible(51) + !Container.Content(episodes) + !SubString(Container.FolderPath,plugin://)</visible>
-					<control type="togglebutton" id="90">
-						<label>$LOCALIZE[31061]</label>
-						<altlabel>$LOCALIZE[31039]</altlabel>
+					<visible>Control.IsVisible(51) + !Container.Content(episodes) + !SubString(Container.FolderPath,plugin://) + Skin.HasSetting(view.biglist.posters)</visible>
+					<control type="button" id="90">
+						<label>$LOCALIZE[31039]</label>
 						<onup>31</onup>
 						<ondown>1</ondown>
 						<onright>50</onright>
 						<onclick>Skin.ToggleSetting(view.biglist.posters)</onclick>
 						<onclick>SetFocus(51)</onclick>
-						<altclick>Skin.ToggleSetting(view.biglist.posters)</altclick>
-						<altclick>SetFocus(51)</altclick>
+						<include>button_Menu</include>
+					</control>
+				</control>
+				<!--BIG LIST: use fanart-->
+				<control type="group">
+					<width>220</width>
+					<height>42</height>
+					<visible>Control.IsVisible(51) + !Container.Content(episodes) + !SubString(Container.FolderPath,plugin://) + !Skin.HasSetting(view.biglist.posters)</visible>
+					<control type="button" id="90">
+						<label>$LOCALIZE[31061]</label>
+						<onup>31</onup>
+						<ondown>1</ondown>
+						<onright>50</onright>
+						<onclick>Skin.ToggleSetting(view.biglist.posters)</onclick>
+						<onclick>SetFocus(51)</onclick>
 						<include>button_Menu</include>
 					</control>
 				</control>
@@ -363,7 +407,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>42</height>
-					<visible>[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb) | SubString(Container.FolderPath,special://profile/playlists)]] | [Container.Content(movies) + SubString(Container.FolderPath,plugin://)] | [SubString(Container.FolderPath,special://skin/playlists/) + !Container.Content(episodes)]</visible>
+					<visible>[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + [SubString(Container.FolderPath,videodb) | SubString(Container.FolderPath,special://profile/playlists)]] | [[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + SubString(Container.FolderPath,plugin://)] | [SubString(Container.FolderPath,special://skin/playlists/) + !Container.Content(episodes)]</visible>
 					<control type="button" id="403">
 						<label>$LOCALIZE[31003]</label>
 						<onclick>Container.SetViewMode(52)</onclick>
@@ -380,7 +424,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>42</height>
-					<visible>Container.Content(episodes) | Container.Content(musicvideos) | [Container.Content(files) + Container.HasFiles]</visible>
+					<visible>Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(artists) | [Container.Content(files) + Container.HasFiles]</visible>
 					<control type="button" id="404">
 						<label>$LOCALIZE[31003]</label>
 						<onclick>Container.SetViewMode(521)</onclick>
@@ -396,7 +440,7 @@
 				<control type="group">
 					<width>220</width>
 					<height>42</height>
-					<visible>Container.Content(addons) | [SubString(Container.FolderPath,plugin://) + !Container.HasFiles + !Container.Content(movies)]</visible>
+					<visible>Container.Content(addons) | [SubString(Container.FolderPath,plugin://) + !Container.HasFiles + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 					<control type="button" id="404">
 						<label>$LOCALIZE[31003]</label>
 						<onclick>Container.SetViewMode(522)</onclick>

@@ -3,15 +3,17 @@
 		<control type="image">
 			<include>screen_Dimensions</include>
 			<texture background="true">$VAR[global_Background.Fallback]</texture>
-			<visible>Skin.HasSetting(fanart.global) + IsEmpty(ListItem.Property(Fanart_Image)) + ![Player.HasVideo + Skin.HasSetting(backgroundvideo.global)]</visible>
+			<visible>Skin.HasSetting(fanart.global) + IsEmpty(ListItem.Property(Fanart_Image)) + ![Player.HasVideo + Skin.HasSetting(backgroundvideo.global)] + !ControlGroup(6000).HasFocus</visible>
 			<include>transition_Fanart</include>
+			<include>menu_BackgroundHide</include>
 		</control>
 		<control type="image">
 			<include>screen_Dimensions</include>
 			<texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
-			<visible>Skin.HasSetting(fanart.global) + !IsEmpty(ListItem.Property(Fanart_Image)) + ![Player.HasVideo + Skin.HasSetting(backgroundvideo.global)]</visible>
+			<visible>Skin.HasSetting(fanart.global) + !IsEmpty(ListItem.Property(Fanart_Image)) + ![Player.HasVideo + Skin.HasSetting(backgroundvideo.global)] + !ControlGroup(6000).HasFocus</visible>
 			<include>transition_Fanart</include>
 			<fadetime>fadetime_Fanart</fadetime>
+			<include>menu_BackgroundHide</include>
 		</control>
 		<!--playing video background-->
 		<control type="group">
