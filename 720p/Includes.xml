@@ -763,7 +763,7 @@
 					<height>64</height>
 					<include>flag_Res</include>
 					<aspectratio align="center">keep</aspectratio>
-					<visible>[Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !IsEmpty(Listitem.VideoResolution)</visible>
+					<visible>Player.HasVideo</visible>
 				</control>
 				<control type="image">
 					<posy>-11</posy>
@@ -772,7 +772,7 @@
 					<height>64</height>
 					<texture>$INFO[Listitem.VideoCodec,flags/codec/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<visible>[Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !IsEmpty(Listitem.VideoCodec)</visible>
+					<visible>Player.HasVideo</visible>
 				</control>
 				<control type="image">
 					<posy>-139</posy>
@@ -781,7 +781,7 @@
 					<height>64</height>
 					<texture>$INFO[Listitem.AudioCodec,flags/codec/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<visible>[Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !IsEmpty(Listitem.AudioCodec)</visible>
+					<visible>Player.HasVideo</visible>
 				</control>
 				<control type="image">
 					<posy>-205</posy>
@@ -790,7 +790,7 @@
 					<height>64</height>
 					<texture>$INFO[Listitem.VideoAspect,flags/video/aspectratio/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<visible>[Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !IsEmpty(Listitem.VideoAspect)</visible>
+					<visible>Player.HasVideo</visible>
 				</control>	
 			</control>
 			<!---info--->
