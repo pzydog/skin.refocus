@@ -226,11 +226,22 @@
 				<!---flags--->
 				<control type="image">
 					<posx>235r</posx>
-					<posy>630</posy>
+					<posy>632</posy>
+					<width>128</width>
+					<height>48</height>
+					<texture>$INFO[ListItem.StarRating]</texture>
+					<aspectratio align="center">keep</aspectratio>
+					<!--<visible>![Window.IsVisible(VideoFiles) | Container.Content(seasons) | Container.Content(musicvideos) | [ListItem.IsFolder + !Container.Content(tvshows)]] + IsEmpty(ListItem.Property(ReleaseDate)) + !SubString(ListItem.Icon,default)</visible>-->
+					<visible>IntegerGreaterThan(ListItem.Rating,0)</visible>
+				</control>
+				<control type="image">
+					<posx>235r</posx>
+					<posy>637</posy>
 					<width>128</width>
 					<height>64</height>
-					<aspectratio align="right">keep</aspectratio>
 					<texture>$VAR[flag_Studio]</texture>
+					<aspectratio align="right">keep</aspectratio>
+					<visible>SubString(Container.FolderPath,plugin://plugin.video.apple)</visible>
 				</control>
 				<control type="group">
 					<posx>85</posx>
@@ -299,6 +310,12 @@
 					<!--<visible>![Window.IsVisible(VideoFiles) | Container.Content(seasons) | Container.Content(musicvideos) | [ListItem.IsFolder + !Container.Content(tvshows)]] + IsEmpty(ListItem.Property(ReleaseDate)) + !SubString(ListItem.Icon,default)</visible>-->
 					<visible>IntegerGreaterThan(ListItem.Rating,0)</visible>
 				</control>
+				<control type="label">
+					<width>435</width>
+					<label>-</label>
+					<include>info_Sub</include>
+					<visible>!IntegerGreaterThan(ListItem.Rating,0)</visible>
+				</control>
 				<control type="textbox" id="4">
 					<width>435</width>
 					<height>355</height>
@@ -311,9 +328,9 @@
 				<posy>610</posy>
 				<width>128</width>
 				<height>64</height>
-				<aspectratio align="right">keep</aspectratio>
+				<aspectratio align="left">keep</aspectratio>
 				<texture>$VAR[flag_Studio]</texture>
-				<visible>Control.IsVisible(571) + [Container.Content(tvshows) | Container.Content(seasons)] + ![IsEmpty(ListItem.TVShowTitle) + IsEmpty(ListItem.Title)]</visible>
+				<visible>Control.IsVisible(571) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + ![IsEmpty(ListItem.TVShowTitle) + IsEmpty(ListItem.Title)]</visible>
 			</control>
 		</control>
 		<include>view_IconPoster</include>

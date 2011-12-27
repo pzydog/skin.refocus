@@ -97,7 +97,7 @@
 	<include name="global_Clock">
 		<control type="group">
 			<include>toggle_ToastMute</include>
-			<visible>![Player.HasMedia + !Skin.HasSetting(overlay.enable)] + !Control.IsVisible(56) + ![Window.IsActive(videoscan) | Window.IsActive(musicscan) | Window.IsActive(infodialog) | Window.IsActive(weather)] + ![Window.IsActive(pictures) + Control.IsVisible(52)]</visible>
+			<visible>![Player.HasMedia + !Skin.HasSetting(overlay.enable) + !Window.IsVisible(28)] + !Control.IsVisible(56) + ![Window.IsActive(videoscan) | Window.IsActive(musicscan) | Window.IsActive(infodialog) | Window.IsActive(weather)] + ![Window.IsActive(pictures) + Control.IsVisible(52)]</visible>
 			<control type="label">
 				<posx>25r</posx>
 				<label>$VAR[global_Clock.Formats]</label>
@@ -419,7 +419,7 @@
 		<height>32</height>
 		<texture>overlays/OverlayResumable.png</texture>
 		<aspect>keepaspect</aspect>
-		<visible>ListItem.IsResumable + Skin.HasSetting(overlay.resumable) + !SubString(Container.FolderPath,special://skin/playlists/Movies In Progress.xsp)</visible>
+		<visible>ListItem.IsResumable + Skin.HasSetting(overlay.resumable) + !SubString(Container.FolderPath,special://skin/playlists/Movies In Progress.xsp) + IsEmpty(ListItem.Property(ReleaseDate)</visible>
 	</include>
 	<include name="overlay_Resumable-list">
 		<width>32</width>
@@ -764,7 +764,8 @@
 					<width>64</width>
 					<height>64</height>
 					<aspectratio align="center">keep</aspectratio>
-					<include>flag_HD-play</include>
+					<texture>flags/video/HD/HD.png</texture>
+					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,540)</visible>
 				</control>
 			</control>
 			<!---info--->
