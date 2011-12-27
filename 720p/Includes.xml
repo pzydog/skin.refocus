@@ -759,14 +759,39 @@
 					<include>flag_Label-audio</include>
 				</control>
 				<control type="image">
+					<width>96</width>
+					<height>64</height>
+					<include>flag_Res</include>
+					<aspectratio align="center">keep</aspectratio>
+					<visible>[Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !IsEmpty(Listitem.VideoResolution)</visible>
+				</control>
+				<control type="image">
 					<posy>-11</posy>
 					<posx>1136</posx>
-					<width>64</width>
+					<width>96</width>
 					<height>64</height>
+					<texture>$INFO[Listitem.VideoCodec,flags/codec/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<texture>flags/video/HD/HD.png</texture>
-					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,540)</visible>
+					<visible>[Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !IsEmpty(Listitem.VideoCodec)</visible>
 				</control>
+				<control type="image">
+					<posy>-139</posy>
+					<posx>1136</posx>
+					<width>96</width>
+					<height>64</height>
+					<texture>$INFO[Listitem.AudioCodec,flags/codec/,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
+					<visible>[Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !IsEmpty(Listitem.AudioCodec)</visible>
+				</control>
+				<control type="image">
+					<posy>-205</posy>
+					<posx>1136</posx>
+					<width>96</width>
+					<height>64</height>
+					<texture>$INFO[Listitem.VideoAspect,flags/video/aspectratio/,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
+					<visible>[Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !IsEmpty(Listitem.VideoAspect)</visible>
+				</control>	
 			</control>
 			<!---info--->
 			<control type="group" id="1">
