@@ -753,44 +753,42 @@
 					<texture>$VAR[flag_Studio.player]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
-				<control type="image">
+				<!---control type="image">
 					<posy>95</posy>
 					<aspectratio align="center">keep</aspectratio>
 					<include>flag_Label-audio</include>
-				</control>
+				</control--->
 				<control type="image">
+					<posy>-313</posy>
+					<posx>1136</posx>
 					<width>96</width>
 					<height>64</height>
-					<include>flag_Res</include>
+					<texture>$INFO[Listitem.VideoCodec,flags/codec/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<visible>Player.HasVideo</visible>
+				</control>
+				<control type="image">
+					<posy>-209</posy>
+					<posx>1136</posx>
+					<width>96</width>
+					<height>64</height>
+					<texture>$INFO[Listitem.VideoResolution,flags/video/resolution/,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
+				</control>
+				<control type="image">
+					<posy>-105</posy>
+					<posx>1136</posx>
+					<width>96</width>
+					<height>64</height>
+					<texture>$INFO[VideoPlayer.AudioCodec,flags/codec/,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
 				</control>
 				<control type="image">
 					<posy>-11</posy>
 					<posx>1136</posx>
 					<width>96</width>
 					<height>64</height>
-					<texture>$INFO[Listitem.VideoCodec,flags/codec/,.png]</texture>
+					<texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
-					<visible>Player.HasVideo</visible>
-				</control>
-				<control type="image">
-					<posy>-139</posy>
-					<posx>1136</posx>
-					<width>96</width>
-					<height>64</height>
-					<texture>$INFO[Listitem.AudioCodec,flags/codec/,.png]</texture>
-					<aspectratio align="center">keep</aspectratio>
-					<visible>Player.HasVideo</visible>
-				</control>
-				<control type="image">
-					<posy>-205</posy>
-					<posx>1136</posx>
-					<width>96</width>
-					<height>64</height>
-					<texture>$INFO[Listitem.VideoAspect,flags/video/aspectratio/,.png]</texture>
-					<aspectratio align="center">keep</aspectratio>
-					<visible>Player.HasVideo</visible>
 				</control>	
 			</control>
 			<!---info--->
