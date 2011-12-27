@@ -759,34 +759,34 @@
 					<include>flag_Label-audio</include>
 				</control--->
 				<control type="image">
-					<posy>-313</posy>
-					<posx>1136</posx>
+					<posy>-26</posy>
+					<posx>824</posx>
 					<width>96</width>
-					<height>64</height>
+					<height>34</height>
 					<texture>$INFO[Listitem.VideoCodec,flags/codec/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
 				<control type="image">
-					<posy>-209</posy>
-					<posx>1136</posx>
+					<posy>-26</posy>
+					<posx>928</posx>
 					<width>96</width>
-					<height>64</height>
+					<height>34</height>
 					<texture>$INFO[Listitem.VideoResolution,flags/video/resolution/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
 				<control type="image">
-					<posy>-105</posy>
-					<posx>1136</posx>
+					<posy>-26</posy>
+					<posx>1032</posx>
 					<width>96</width>
-					<height>64</height>
+					<height>34</height>
 					<texture>$INFO[VideoPlayer.AudioCodec,flags/codec/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
 				<control type="image">
-					<posy>-11</posy>
+					<posy>-26</posy>
 					<posx>1136</posx>
 					<width>96</width>
-					<height>64</height>
+					<height>34</height>
 					<texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>	
