@@ -15,7 +15,7 @@
 				<info>ListItem.StarRating</info>
 				<aspectratio align="center">keep</aspectratio>
 				<!--<visible>![Window.IsVisible(VideoFiles) | Container.Content(seasons) | Container.Content(musicvideos) | [ListItem.IsFolder + !Container.Content(tvshows)]] + IsEmpty(ListItem.Property(ReleaseDate)) + !SubString(ListItem.Icon,default)</visible>-->
-				<visible>!SubString(ListItem.Icon,default)</visible>
+				<visible>!SubString(ListItem.Icon,default) + !IsEmpty(ListItem.StarRating) </visible>
 			</control>
 			<control type="image">
 				<width>96</width>
@@ -33,7 +33,6 @@
 			</control>
 		</control>
 	</include>
-
 	<!--video info dialog-->
 	<include name="flags_Type-info">
 		<control type="grouplist" id="100">
@@ -46,12 +45,11 @@
 				<height>64</height>
 				<info>ListItem.StarRating</info>
 				<aspectratio align="center">keep</aspectratio>
-				<visible>IntegerGreaterThan(ListItem.Rating,0)</visible>
 			</control>
 			<control type="image">
 				<width>96</width>
 				<height>64</height>
-				<include>flag_Res</include>
+				<texture>$INFO[ListItem.VideoResolution,flags/video/resolution/,.png]</texture>
 				<aspectratio align="center">keep</aspectratio>
 				<visible>[Container.Content(movies) | Container.Content(episodes) | Container.Content(musicvideos)] + !IsEmpty(Listitem.VideoResolution)</visible>
 			</control>
@@ -92,7 +90,6 @@
 			</control>
 		</control>
 	</include>
-	
 	<!--pvr-->
 	<include name="flags_PVR">
 		<control type="image">
