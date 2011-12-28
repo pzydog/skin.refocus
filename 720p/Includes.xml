@@ -292,7 +292,7 @@
 		<textcolor>Color1</textcolor>
 	</include>
 	<include name="info_Sub">
-		<height>25</height>
+		<height>35</height>
 		<aligny>center</aligny>
 		<font>info</font>
 		<textcolor>Color2</textcolor>
@@ -727,7 +727,7 @@
 <!---OSD / SLIDESHOW------>
 	<include name="osd_Info">
 		<control type="group">
-			<posy>300</posy>
+			<posy>284</posy>
 			<include>transition_OSD</include>
 			<visible>[Player.ShowInfo | Window.IsActive(fullscreeninfo)] + ![Window.IsActive(visualisationpresetlist) | Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(script-XBMC_Lyrics-main.xml)]</visible>
 			<!---overlays--->
@@ -743,6 +743,125 @@
 				<aspectratio>stretch</aspectratio>
 				<texture border="0,1,0,11">osd/infoOverlay.png</texture>
 			</control>
+			<control type="group" id="213">
+				<posy>391</posy>
+				<animation type="WindowOpen">
+					<effect type="slide" start="0,50" end="0,0" tween="Cubic" center="auto" easing="Out" time="250" />
+				</animation>
+				<animation type="WindowClose">
+					<effect type="slide" start="0,0" end="0,50" tween="Cubic" center="auto" easing="Out" time="250" />
+				</animation>
+				<control type="image" id="1">
+					<width>screen_Width</width>
+					<height>50</height>
+					<texture flipy="false" border="48,33,48,33">osd/seekbar.png</texture>
+				</control>
+				<control type="group">
+					<posx>255</posx>
+					<posy>2</posy>
+					<!--cache progress-->
+					<control type="progress" id="1">
+						<width>770</width>
+						<height>22</height>
+						<info>Player.CacheLevel</info>
+						<texturebg border="10">dialogs/cacheBackground.png</texturebg>
+						<midtexture border="10.5">dialogs/cacheSlider.png</midtexture>
+						<lefttexture>-</lefttexture>
+						<righttexture>-</righttexture>
+						<overlaytexture>-</overlaytexture>
+					</control>
+					<!--playback progress-->
+					<control type="progress" id="1">
+						<posy>10</posy>
+						<width>770</width>
+						<height>22</height>
+						<texturebg border="10">dialogs/progressBackground.png</texturebg>
+						<info>Player.Progress</info>
+					</control>
+				</control>
+				<control type="group">
+					<posy>2</posy>
+					<control type="group" id="901">
+						<posx>250</posx>
+						<control type="label">
+							<label>$LOCALIZE[773] $INFO[Player.SeekOffset]</label>
+							<include>dialog_Label-seekbar</include>
+							<visible>Player.DisplayAfterSeek + ![Player.Forwarding | Player.Rewinding]</visible>
+						</control>
+						<!--buffering-->
+						<control type="label">
+							<label>$LOCALIZE[15107] $INFO[Player.CacheLevel]%</label>
+							<include>dialog_Label-seekbar</include>
+							<visible>[Player.Paused + Player.Caching] + !Player.Seeking</visible>
+						</control>
+						<!--paused-->
+						<control type="label">
+							<label>$LOCALIZE[112]</label>
+							<include>dialog_Label-seekbar</include>
+							<visible>[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek</visible>
+						</control>
+						<control type="label">
+							<label>$LOCALIZE[31041]</label>
+							<visible>Player.Forwarding2x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+						<control type="label">
+							<label>$LOCALIZE[31042]</label>
+							<visible>Player.Forwarding4x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+						<control type="label" id="0">
+							<label>$LOCALIZE[31043]</label>
+							<visible>Player.Forwarding8x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+						<control type="label" id="0">
+							<label>$LOCALIZE[31044]</label>
+							<visible>Player.Forwarding16x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+						<control type="label" id="0">
+							<label>$LOCALIZE[31045]</label>
+							<visible>Player.Forwarding32x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+						<control type="label" id="0">
+							<label>$LOCALIZE[31046]</label>
+							<visible>Player.Rewinding2x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+						<control type="label" id="0">
+							<label>$LOCALIZE[31047]</label>
+							<visible>Player.Rewinding4x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+						<control type="label" id="0">
+							<label>$LOCALIZE[31048]</label>
+							<visible>Player.Rewinding8x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+						<control type="label" id="0">
+							<label>$LOCALIZE[31049]</label>
+							<visible>Player.Rewinding16x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+						<control type="label" id="0">
+							<label>$LOCALIZE[31050]</label>
+							<visible>Player.Rewinding32x</visible>
+							<include>dialog_Label-seekbar</include>
+						</control>
+					</control>
+					<control type="group" id="901">
+						<posx>1030</posx>
+						<control type="label" id="22">
+							<width>250</width>
+							<align>left</align>
+							<label>[B]$INFO[Player.Time][/B] / $INFO[Player.Duration]</label>
+							<include>dialog_Label-seekbar</include>
+						</control>
+					</control>
+				</control>				
+			</control>
 			<!---flags--->
 			<control type="group">
 				<posx>40</posx>
@@ -753,27 +872,6 @@
 					<texture>$VAR[flag_Studio.player]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
-				<control type="image">
-					<posx>935</posx>
-					<posy>2</posy>
-					<height>34</height>
-					<texture>$INFO[VideoPlayer.VideoResolution,flags/video/resolution/,.png]</texture>
-					<aspectratio align="center">keep</aspectratio>
-				</control>
-				<control type="image">
-                                        <posx>1025</posx>
-                                        <posy>2</posy>
-					<height>34</height>
-					<texture>$INFO[VideoPlayer.AudioCodec,flags/codec/,.png]</texture>
-					<aspectratio align="center">keep</aspectratio>
-				</control>
-				<control type="image">
-                                        <posx>1130</posx>
-                                        <posy>2</posy>
-					<height>34</height>
-					<texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
-					<aspectratio align="center">keep</aspectratio>
-				</control>
 			</control>
 			<!---info--->
 			<control type="group" id="1">
@@ -781,16 +879,37 @@
 				<posy>223</posy>
 			<!---line 1--->
 				<control type="label">
-					<width>670</width>
+					<width min="500" max="800">auto</width>
 					<label>$INFO[MusicPlayer.Title]</label>
 					<font>osdTitle</font>
 					<textcolor>Color1</textcolor>
 				</control>
 				<control type="label">
-					<width>670</width>
+					<width min="500" max="800">auto</width>
 					<label>$INFO[VideoPlayer.Title]</label>
 					<font>osdTitle</font>
 					<textcolor>Color1</textcolor>
+				</control>
+				<control type="image">
+					<posx>748</posx><!--740-->
+					<posy>-2</posy>
+					<height>34</height>
+					<texture>$INFO[VideoPlayer.VideoResolution,flags/video/resolution/,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
+				</control>
+				<control type="image">
+					<posx>843</posx>
+					<posy>-2</posy>
+					<height>34</height>
+					<texture>$INFO[VideoPlayer.AudioCodec,flags/codec/,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
+				</control>
+				<control type="image">
+					<posx>948</posx>
+					<posy>-2</posy>
+					<height>34</height>
+					<texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
 				</control>
 			<!---line 2--->
 				<!--music-->
@@ -855,17 +974,11 @@
 						<height>87</height>
 						<label>$VAR[player_Plot.Condition]</label>
 						<include>description_OSD</include>
-						<visible>!Skin.HasSetting(osd.progressbar)</visible>
-					</control>
-					<control type="textbox" id="8">
-						<height>60</height>
-						<label>$VAR[player_Plot.Condition]</label>
-						<include>description_OSD</include>
-						<visible>Skin.HasSetting(osd.progressbar)</visible>
 					</control>
 				</control>
 				<!--progress-->
-				<control type="label">
+				
+				<!-- control type="label">
 					<posx>1038</posx>
 					<posy>30</posy>
 					<width>1000</width>
@@ -873,20 +986,21 @@
 					<label>$INFO[Player.Time,, / ]$INFO[Player.Duration]</label>
 					<font>info</font>
 					<textcolor>Color2</textcolor>
-				</control>
-				<control type="progress" id="1">
+				</control -->
+				
+				<!-- control type="progress" id="1">
 					<posy>135</posy>
 					<width>1038</width>
 					<height>18</height>
 					<texturebg border="10">dialogs/progressBackground.png</texturebg>
 					<info>Player.Progress</info>
 					<visible>Skin.HasSetting(osd.progressbar)</visible>
-				</control>
+				</control -->
 			</control>
 		</control>
 		<control type="label">
 			<posx>200</posx>
-			<posy>450</posy>
+			<posy>434</posy>
 			<width>1080</width>
 			<label>$LOCALIZE[13350]</label>
 			<font>osdHeader</font>
