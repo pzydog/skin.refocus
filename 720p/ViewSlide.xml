@@ -46,7 +46,7 @@
 					<height>110</height>
 					<label>$VAR[global_Plot.Condition]</label>
 					<include>description_Small</include>
-					<visible>IsEmpty(ListItem.Property(ReleaseDate))</visible>
+					<visible>IsEmpty(ListItem.Property(ReleaseDate)) + !SubString(ListItem.Icon,default)</visible>
 				</control>
 				<control type="textbox">
 					<posy>60</posy>
@@ -54,7 +54,7 @@
 					<height>163</height>
 					<label>$VAR[global_Plot.Condition]</label>
 					<include>description_Small</include>
-					<visible>!IsEmpty(ListItem.Property(ReleaseDate))</visible>
+					<visible>!IsEmpty(ListItem.Property(ReleaseDate)) + !SubString(ListItem.Icon,default)</visible>
 				</control>
 			</control>
 		</control>
@@ -117,7 +117,7 @@
 			<include>transition_Container</include>
 			<include>infoDialogHide</include>
 			<include>toggle_Menu</include>
-			<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			<visible>[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + !SubString(Container.FolderPath,plugin.video.hulu)</visible>
 			<include condition="Window.IsVisible(videolibrary)">SlidePoster_Video</include>
 		</control>
 	</include>
@@ -189,7 +189,7 @@
 			<include>transition_Container</include>
 			<include>infoDialogHide</include>
 			<include>toggle_Menu</include>
-			<visible>[Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(artists)] | [Container.Content(movies) + !SubString(Container.FolderPath,plugin://) + Container.HasFiles] | [Container.Content(files) + Container.HasFiles]</visible>
+			<visible>[Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos) | Container.Content(artists)] | [Container.Content(movies) + !SubString(Container.FolderPath,plugin://) + Container.HasFiles] | [Container.Content(files) + Container.HasFiles] + !StringCompare(Container.FolderPath,special://videoplaylists/)</visible>
 			<include condition="Window.IsVisible(videolibrary)">SlideWideVideo</include>
 			<include condition="Window.IsVisible(musiclibrary)">SlideWideMusic</include>
 		</control>	
@@ -301,7 +301,7 @@
 			<focusposition>1</focusposition>
 			<scrolltime tween="Cubic" easing="Out">400</scrolltime>
 			<orientation>horizontal</orientation>
-			<visible>[Container.Content(albums) | Container.Content(singles) | Container.Content(songs) | Container.Content(artists) | Container.Content(addons) | Container.Content(programs)] | [SubString(Container.FolderPath,plugin://) + !Container.HasFiles + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]]</visible>
+			<visible>[Container.Content(albums) | Container.Content(singles) | Container.Content(songs) | Container.Content(artists) | Container.Content(programs)] | [SubString(Container.FolderPath,plugin://) + !Container.HasFiles + ![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)]] | [Container.Content(addons) + !StringCompare(Container.FolderName,$LOCALIZE[24032])]</visible>
 			<include>transition_Container</include>
 			<include>infoDialogHide</include>
 			<include>toggle_Menu</include>
