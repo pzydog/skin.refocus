@@ -772,22 +772,22 @@
 					<textcolor>Color1</textcolor>
 					<font>osdTitle</font>
 				</control>
-				<control type="image">
-					<posx>748</posx><!--740-->
+				<control type="image" id="1">
+					<posx>300r</posx><!--740-->
 					<posy>-2</posy>
 					<height>34</height>
 					<texture>$INFO[VideoPlayer.VideoResolution,flags/video/resolution/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
-				<control type="image">
-					<posx>843</posx>
+				<control type="image" id="1">
+					<posx>205r</posx>
 					<posy>-2</posy>
 					<height>34</height>
 					<texture>$INFO[VideoPlayer.AudioCodec,flags/codec/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
-				<control type="image">
-					<posx>948</posx>
+				<control type="image" id="1">
+					<posx>100r</posx>
 					<posy>-2</posy>
 					<height>34</height>
 					<texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
@@ -811,7 +811,7 @@
 				</control>
 				<control type="image" id="1">
 					<posx>965</posx>
-					<posy>30</posy>
+					<posy>35</posy>
 					<width>128</width>
 					<height>22</height>
 					<texture>$INFO[Player.StarRating,rating/nf-,]</texture>
