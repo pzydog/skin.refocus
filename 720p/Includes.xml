@@ -730,9 +730,9 @@
 			<animation effect="slide" start="0,0" end="0,42" time="0" condition="Player.HasAudio | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(files)">Conditional</animation>
 			<visible>[Window.IsVisible(fullscreenvideo) | Window.IsActive(visualisation)] + ![Window.IsActive(visualisationpresetlist) | Window.IsActive(videoosd) | Window.IsVisible(bookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsActive(script-XBMC_Lyrics-main.xml)]</visible>
 			<control type="image" id="11">
-				<width>680</width>
+				<width>678</width>
 				<height>720</height>
-				<texture>osd/osdOverlayLeft.png</texture>
+				<texture>osd/osdOverlay.png</texture>
 			</control>
 			<!---info--->
 			<control type="group" id="1">
@@ -785,7 +785,7 @@
 					<posy>65</posy>
 					<visible>Player.HasVideo + ![VideoPlayer.Content(musicvideos) | VideoPlayer.Content(files)]</visible>
 					<control type="textbox" id="1">
-						<height>150</height>
+						<height>110</height>
 						<width>592</width>
 						<label>$VAR[player_Plot.Condition]</label>
 						<textcolor>Color3</textcolor>
@@ -826,36 +826,33 @@
 				</control>
 				<!---progress------>
 				<control type="group" id="1">
-					<posy>120</posy>
+					<posy>235</posy>
+					<width>592</width>
 					<animation effect="slide" start="0,0" end="0,-44" time="0" condition="Player.HasAudio | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(files)">Conditional</animation>
-					<visible>Skin.HasSetting(osd.progressbar)</visible>
+					<!-- visible>Skin.HasSetting(osd.progressbar)</visible -->
 					<control type="progress" id="1">
-						<posy>10</posy>
-						<width>900</width>
-						<height>18</height>
-						<texturebg border="10">dialogs/progressBackground.png</texturebg>
+						<height>15</height>
+						<texturebg border="6">osd/osdProgressBg.png</texturebg>
+						<midtexture border="6">osd/osdProgressOverlay.png</midtexture>
 						<info>Player.Progress</info>
 					</control>
 					<control type="group" id="1">
-						<posy>5</posy>
+						<posy>12</posy>
 						<control type="label" id="1">
-							<posx>-50</posx>
-							<width>1000</width>
-							<label>$INFO[Player.Time]</label>
-							<font>smallerCaps</font>
-							<textcolor>Color3</textcolor>
-						</control>
-						<control type="label" id="1">
-							<posx>950</posx>
-							<width>1000</width>
-							<label>$INFO[Player.Duration]</label>
+							<posx>592</posx>
 							<align>right</align>
+							<width>250</width>
+							<height>40</height>
+							<label>$INFO[Player.Duration] / [COLOR=Color2]$INFO[Player.FinishTime][/COLOR]</label>
 							<font>smallerCaps</font>
-							<textcolor>Color3</textcolor>
 						</control>
 						<control type="label" id="1">
-							<label>$VAR[player_Status.Condition]</label>
-							<include>seekbar_Label-Info</include>
+							<posx>0</posx>
+							<align>left</align>
+							<width>250</width>
+							<height>40</height>
+							<label>$INFO[Player.Time][COLOR=Color2]$INFO[Player.ChapterCount, / $LOCALIZE[21396]: ][/COLOR]</label>
+							<font>smallerCaps</font>
 						</control>
 					</control>
 				</control>
@@ -864,50 +861,37 @@
 					<posy>285</posy>
 					<width>592</width>
 					<control type="label" id="1">
-						<label>$LOCALIZE[209]:</label>
-						<textcolor>Color2</textcolor>
-						<include>info_Sub</include>
-					</control>
-					<control type="label" id="1">
-						<posx>60</posx>
 						<label>$VAR[osd.Next]</label>
 						<textcolor>Color3</textcolor>
 						<include>info_Sub</include>
 					</control>
 					<visible>VideoPlayer.Content(livetv)</visible>
 				</control>
-			</control>
-			<!-- Covers / Logos -->
-			<control type="image" id="1">
-				<posx>45</posx>
-				<posy>450</posy>
-				<width>145</width>
-				<texture>$VAR[flag_Studio.player]</texture>
-				<aspectratio align="center">keep</aspectratio>
-				<visible>!VideoPlayer.Content(movies)</visible>
-			</control>
-			<control type="image" id="1">
-				<posx>45</posx>
-				<posy>450</posy>
-				<width>145</width>
-				<texture>$VAR[flag_Studio.player]</texture>
-				<aspectratio align="right">keep</aspectratio>
-				<visible>VideoPlayer.Content(movies)</visible>
-			</control>
-			<control type="image" id="1">
-				<posx>45</posx>
-				<posy>450</posy>
-				<width>145</width>
-				<texture>$INFO[MusicPlayer.Cover]</texture>
-				<aspectratio align="center">stretch</aspectratio>
-			</control>
-			<control type="image" id="1">
-				<posx>45</posx>
-				<posy>450</posy>
-				<width>145</width>
-				<texture>$VAR[flag_Studio.player]</texture>
-				<aspectratio align="center">keep</aspectratio>
-				<visible>VideoPlayer.Content(livetv)</visible>
+				<!-- Covers / Logos -->
+				<control type="image" id="1">
+					<posy>475</posy>
+					<width>175</width>
+					<texture>$VAR[flag_Studio.player]</texture>
+					<aspectratio align="center">keep</aspectratio>
+					<visible>VideoPlayer.Content(livetv)</visible>
+				</control>
+				<control type="image" id="1">
+					<posx>-22</posx>
+					<posy>300</posy>
+					<height>250</height>
+					<width>175</width>
+					<info>VideoPlayer.Cover</info>
+					<bordertexture border="40">frames/frame_Square.png</bordertexture>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<bordersize>22</bordersize>
+					<visible>VideoPlayer.Content(movies)</visible>
+				</control>
+				<control type="image" id="1">
+					<posy>450</posy>
+					<width>145</width>
+					<texture>$INFO[MusicPlayer.Cover]</texture>
+					<aspectratio align="center">stretch</aspectratio>
+				</control>
 			</control>
 		</control>
 	</include>

@@ -239,16 +239,20 @@
 	</include>
 	<include name="transition_OSD">
 		<animation type="Visible" reversible="false">
-			<effect type="fade" start="0" end="100" time="300" tween="Quadratic" easing="Out" />
+			<effect type="slide" start="0,-7" end="0,0" tween="Cubic" center="auto" easing="Out" time="350" />
+			<effect type="fade" start="0" end="100" time="250" tween="Quadratic" easing="Out" />
 		</animation>
 		<animation type="Hidden" reversible="false">
-			<effect type="fade" start="100" end="0" time="300" tween="Quadratic" easing="Out" />
+			<effect type="slide" start="0,0" end="0,-7" tween="Cubic" center="auto" easing="Out" time="350" />
+			<effect type="fade" start="100" end="0" time="250" tween="Quadratic" easing="Out" />
 		</animation>
 		<animation type="WindowOpen" reversible="false">
-			<effect type="fade" start="0" end="100" time="300" tween="Quadratic" easing="Out" />
+			<effect type="slide" start="0,-7" end="0,0" tween="Cubic" center="auto" easing="Out" time="300" />
+			<effect type="fade" start="0" end="100" time="250" tween="Quadratic" easing="Out" />
 		</animation>
 		<animation type="WindowClose" reversible="false">
-			<effect type="fade" start="100" end="0" time="300" tween="Quadratic" easing="Out" />
+			<effect type="slide" start="0,0" end="0,-7" tween="Cubic" center="auto" easing="Out" time="300" />
+			<effect type="fade" start="100" end="0" time="250" tween="Quadratic" easing="Out" />
 		</animation>
 	</include>
 	<include name="transition_HomeMenu">
