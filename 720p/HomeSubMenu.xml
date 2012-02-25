@@ -140,42 +140,42 @@
 				<content>
 					<item id="1">
 						<label>$LOCALIZE[132]</label>
-						<onclick>ActivateWindow(MusicLibrary,albums)</onclick>
+						<onclick>ActivateWindow(MusicLibrary,albums,return)</onclick>
 						<visible>Library.HasContent(music)</visible>
 					</item>
 					<item id="2">
 						<label>$LOCALIZE[31970]</label>
-						<onclick>ActivateWindow(MusicLibrary,recentlyaddedalbums)</onclick>
+						<onclick>ActivateWindow(MusicLibrary,recentlyaddedalbums,return)</onclick>
 						<visible>Library.HasContent(music) + Skin.HasSetting(musicmenu.recent)</visible>
 					</item>
 					<item id="3">
 						<label>$LOCALIZE[31971]</label>
-						<onclick>ActivateWindow(MusicLibrary,recentlyplayedalbums)</onclick>
+						<onclick>ActivateWindow(MusicLibrary,recentlyplayedalbums,return)</onclick>
 						<visible>Library.HasContent(music) + Skin.HasSetting(musicmenu.played)</visible>
 					</item>
 					<item id="4">
 						<label>$LOCALIZE[133]</label>
-						<onclick>ActivateWindow(MusicLibrary,artists)</onclick>
+						<onclick>ActivateWindow(MusicLibrary,artists,return)</onclick>
 						<visible>Library.HasContent(music) + Skin.HasSetting(musicmenu.artists)</visible>
 					</item>
 					<item id="5">
 						<label>$LOCALIZE[135]</label>
-						<onclick>ActivateWindow(MusicLibrary,genres)</onclick>
+						<onclick>ActivateWindow(MusicLibrary,genres,return)</onclick>
 						<visible>Library.HasContent(music) + Skin.HasSetting(musicmenu.genres)</visible>
 					</item>
 					<item id="6">
 						<label>$LOCALIZE[24001]</label>
-						<onclick>ActivateWindow(MusicLibrary,Addons)</onclick>
+						<onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
 						<visible>Library.HasContent(music) + Skin.HasSetting(musicmenu.addons)</visible>
 					</item>
 					<item id="6">
 						<label>$LOCALIZE[24001]</label>
-						<onclick>ActivateWindow(MusicFiles,Addons)</onclick>
+						<onclick>ActivateWindow(MusicFiles,Addons,return)</onclick>
 						<visible>!Library.HasContent(music) + Skin.HasSetting(musicmenu.addons)</visible>
 					</item>
 					<item id="8">
 						<label>$LOCALIZE[136]</label>
-						<onclick>ActivateWindow(MusicLibrary,playlists)</onclick>
+						<onclick>ActivateWindow(MusicLibrary,playlists,return)</onclick>
 						<visible>Skin.HasSetting(musicmenu.playlists)</visible>
 					</item>
 					<item id="9">
@@ -190,7 +190,7 @@
 					</item>
 					<item id="11">
 						<label>$LOCALIZE[20389]</label>
-						<onclick>ActivateWindow(videolibrary,musicvideotitles)</onclick>
+						<onclick>ActivateWindow(videolibrary,musicvideotitles,return)</onclick>
 						<visible>Library.HasContent(musicvideos) + Skin.HasSetting(musicmenu.videos)</visible>
 					</item>
 					<item id="12">
@@ -432,18 +432,18 @@
 				<content>
 					<item id="1">
 						<label>$LOCALIZE[1024]</label>
-						<onclick>ActivateWindow(Videos,MovieTitles)</onclick>
+						<onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
 					</item>
 					<item id="2">
 						<label>$LOCALIZE[31086]</label>
-						<onclick>Skin.SetString(Watchlist,Movies)</onclick>
+						<onclick>Skin.SetString(Watchlist,Movies,return)</onclick>
 						<onclick>ActivateWindow(63)</onclick>
 						<onclick>SetFocus(52)</onclick>
 						<visible>System.HasAddon(script.watchlist) + Skin.HasSetting(moviesmenu.watchlist) + !Skin.HasSetting(watchlist.disable)</visible>
 					</item>
 					<item id="3">
 						<label>$LOCALIZE[31095]</label>
-						<onclick>ActivateWindow(Videos,recentlyaddedmovies)</onclick>
+						<onclick>ActivateWindow(Videos,recentlyaddedmovies,return)</onclick>
 						<visible>Skin.HasSetting(moviesmenu.recent)</visible>
 					</item>
 					<item id="4">
@@ -458,22 +458,22 @@
 					</item>
 					<item id="6">
 						<label>$LOCALIZE[31011]</label>
-						<onclick>XBMC.ActivateWindow(Videos, plugin://plugin.video.the.trailers/)</onclick>
+						<onclick>XBMC.ActivateWindow(Videos, plugin://plugin.video.the.trailers/,return)</onclick>
 						<visible>Skin.HasSetting(moviesmenu.trailers) + System.HasAddon(plugin.video.the.trailers)</visible>
 					</item>
 					<item id="7">
 						<label>$LOCALIZE[135]</label>
-						<onclick>ActivateWindow(Videos,moviegenres)</onclick>
+						<onclick>ActivateWindow(Videos,moviegenres,return)</onclick>
 						<visible>Skin.HasSetting(moviesmenu.genres)</visible>
 					</item>
 					<item id="8">
 						<label>$LOCALIZE[652]</label>
-						<onclick>ActivateWindow(Videos,movieyears)</onclick>
+						<onclick>ActivateWindow(Videos,movieyears,return)</onclick>
 						<visible>Skin.HasSetting(moviesmenu.years)</visible>
 					</item>
 					<item id="9">
 						<label>$LOCALIZE[344]</label>
-						<onclick>ActivateWindow(Videos,movieactors)</onclick>
+						<onclick>ActivateWindow(Videos,movieactors,return)</onclick>
 						<visible>Skin.HasSetting(moviesmenu.actors)</visible>
 					</item>
 				</content>
