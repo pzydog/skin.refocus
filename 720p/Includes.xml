@@ -737,34 +737,30 @@
 			<!---info--->
 			<control type="group" id="1">
 				<posx>63</posx>
-				<posy>25</posy>
+				<posy>23</posy>
+				<width>592</width>
 				<!-- Title -->
 				<control type="label" id="1">
 					<width>592</width>
+					<label>$LOCALIZE[31947]</label>
+					<textcolor>Color2</textcolor>
+					<font>osdHeader</font>
+				</control>
+				<control type="label" id="1">
+					<posy>53</posy>
 					<label>$VAR[osd.Title]</label>
 					<textcolor>Color1</textcolor>
 					<font>osdTitle</font>
 				</control>
-				<control type="label" id="1">
-					<posy>98</posy>
-					<width>850</width>
-					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
-					<textcolor>Color3</textcolor>
-					<font>osdTitle</font>
-					<include>info_Sub</include>
-					<visible>Player.HasAudio</visible>
-				</control>
 				<!-- Sub info -->
 				<control type="label" id="1">
-					<posy>33</posy>
-					<width>593</width>
+					<posy>90</posy>
 					<label>$VAR[osd.Info]</label>
 					<textcolor>Color2</textcolor>
 					<include>info_Sub</include>
 				</control>
 				<control type="label" id="1">
-					<posy>54</posy>
-					<width>850</width>
+					<posy>96</posy>
 					<label>$LOCALIZE[209]: $INFO[MusicPlayer.Offset(1).Artist,]$INFO[MusicPlayer.Offset(1).Title, - ] ($INFO[MusicPlayer.PlaylistPosition,]$INFO[MusicPlayer.PlaylistLength,/])</label>
 					<textcolor>Color3</textcolor>
 					<font>smallerCaps</font>
@@ -772,8 +768,7 @@
 					<visible>Player.HasAudio</visible>
 				</control>
 				<control type="label" id="1">
-					<posy>54</posy>
-					<width>850</width>
+					<posy>96</posy>
 					<label>$LOCALIZE[209]: $INFO[VideoPlayer.Offset(1).Artist,]$INFO[MusicPlayer.Offset(1).Title, - ] ($INFO[VideoPlayer.PlaylistPosition,]$INFO[VideoPlayer.PlaylistLength,/])</label>
 					<textcolor>Color3</textcolor>
 					<font>smallerCaps</font>
@@ -782,7 +777,7 @@
 				</control>
 				<!---plot------>
 				<control type="group" id="1">
-					<posy>65</posy>
+					<posy>126</posy>
 					<visible>Player.HasVideo + ![VideoPlayer.Content(musicvideos) | VideoPlayer.Content(files)]</visible>
 					<control type="textbox" id="1">
 						<height>110</height>
@@ -796,37 +791,45 @@
 				</control>
 				<!-- Codec info -->
 				<control type="image" id="1">
-					<posx>905r</posx><!--740-->
-					<posy>185</posy>
-					<height>34</height>
+					<posx>273r</posx><!--740-->
+					<posy>241</posy>
 					<texture>$INFO[VideoPlayer.VideoResolution,flags/video/resolution/,.png]</texture>
+					<height>34</height>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
 				<control type="image" id="1">
-					<posx>800r</posx>
-					<posy>185</posy>
+					<posx>178r</posx>
+					<posy>241</posy>
 					<height>34</height>
 					<texture>$INFO[VideoPlayer.AudioCodec,flags/codec/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
 				<control type="image" id="1">
-					<posx>695r</posx>
-					<posy>185</posy>
+					<posx>73r</posx>
+					<posy>241</posy>
 					<height>34</height>
 					<texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
 				<control type="image" id="1">
-					<posx>695r</posx>
-					<posy>185</posy>
+					<posx>25r</posx>
+					<posy>241</posy>
 					<width>82</width>
 					<height>34</height>
 					<aspectratio align="right">keep</aspectratio>
 					<texture>flags/codec/$INFO[MusicPlayer.Codec,,.png]</texture>
 				</control>
 				<!---progress------>
+				<control type="label" id="1">
+					<posy>0</posy>
+					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
+					<textcolor>Color3</textcolor>
+					<font>osdTitle</font>
+					<include>info_Sub</include>
+					<visible>Player.HasAudio</visible>
+				</control>
 				<control type="group" id="1">
-					<posy>235</posy>
+					<posy>288</posy>
 					<width>592</width>
 					<animation effect="slide" start="0,0" end="0,-44" time="0" condition="Player.HasAudio | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(files)">Conditional</animation>
 					<!-- visible>Skin.HasSetting(osd.progressbar)</visible -->
@@ -837,7 +840,7 @@
 						<info>Player.Progress</info>
 					</control>
 					<control type="group" id="1">
-						<posy>12</posy>
+						<posy>8</posy>
 						<control type="label" id="1">
 							<posx>592</posx>
 							<align>right</align>
@@ -851,21 +854,26 @@
 							<align>left</align>
 							<width>250</width>
 							<height>40</height>
-							<label>$INFO[Player.Time][COLOR=Color2]$INFO[Player.ChapterCount, / $LOCALIZE[21396]: ][/COLOR]</label>
+							<label>$INFO[Player.Time][COLOR=Color2]$INFO[Player.Chapter, / $LOCALIZE[21396]: ][/COLOR]</label>
 							<font>smallerCaps</font>
 						</control>
 					</control>
 				</control>
 				<!-- Live TV Next -->
 				<control type="group" id="1">
-					<posy>285</posy>
-					<width>592</width>
+					<posy>350</posy>
+					<visible>VideoPlayer.Content(livetv)</visible>
 					<control type="label" id="1">
+						<label>$LOCALIZE[209]</label>
+						<textcolor>Color2</textcolor>
+						<font>osdHeader</font>
+					</control>
+					<control type="label" id="1">
+						<posy>38</posy>
 						<label>$VAR[osd.Next]</label>
 						<textcolor>Color3</textcolor>
 						<include>info_Sub</include>
 					</control>
-					<visible>VideoPlayer.Content(livetv)</visible>
 				</control>
 				<!-- Covers / Logos -->
 				<control type="image" id="1">
