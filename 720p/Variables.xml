@@ -172,7 +172,7 @@
 		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.studio,flags/studios/,.png]</value>
 		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.studio,flags/networks/,.png]</value>
 		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.studio,flags/labels/,.png]</value>
-		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Icon]</value>
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelName,flags/networks/,.png]</value>
 		<value condition="VideoPlayer.Content(files)">$INFO[VideoPlayer.VideoCodec,flags/codec/,.png]</value>
 		<value condition="MusicPlayer.Content(files)">$INFO[MusicPlayer.Property(Album_Label),flags/labels/,.png]</value>
 	</variable>
@@ -284,19 +284,21 @@
 <!---OSD------>
 	<variable name="osd.Title">
 		<value condition="Window.IsActive(visualisation) | Window.IsActive(slideshow)">$INFO[MusicPlayer.Title]</value>
-		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.Title]</value>
-		<value condition="VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(files)">$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(files) | VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Title]</value>
 	</variable>
 	<variable name="osd.Info">
 		<value condition="Window.IsActive(visualisation) | Window.IsActive(slideshow)">$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, • ]$INFO[MusicPlayer.Year, • ]</value>
 		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Genre,, • ]$INFO[VideoPlayer.Year]</value>
 		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TVShowTitle,,: ]$INFO[VideoPlayer.Season,$LOCALIZE[20373] , -] $INFO[VideoPlayer.Episode,$LOCALIZE[20359] ]</value>
-		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelName,, • ]$INFO[VideoPlayer.NextTitle,$LOCALIZE[209]: ] ($INFO[VideoPlayer.Endtime])</value>
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</value>
 		<value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.Artist]$INFO[VideoPlayer.Album, • ]$INFO[VideoPlayer.Year, • ]</value>
 		<value condition="VideoPlayer.Content(files) | [!VideoPlayer.Content(files) + Substring(Player.Filenameandpath,http)]">$INFO[Player.Filenameandpath]</value>
 		<value condition="Player.ChapterCount">$LOCALIZE[21396]$INFO[Player.Chapter,: ]$INFO[Player.ChapterCount, / ]$INFO[Player.ChapterName, • ,]</value>
 	</variable>
-
+	<variable name="osd.Next">
+		<value condition="VideoPlayer.Content(livetv)">[COLOR=Color2]$INFO[VideoPlayer.Endtime,,. ][/COLOR]$INFO[VideoPlayer.NextTitle]</value>
+	</variable>
+	
 <!---PLAYER------>
 	<variable name="player_Plot.Condition">
 		<value condition="!IsEmpty(VideoPlayer.Plotoutline) + !VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Plotoutline]</value>
