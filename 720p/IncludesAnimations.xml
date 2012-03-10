@@ -247,12 +247,12 @@
 			<effect type="fade" start="100" end="0" time="250" tween="Quadratic" easing="Out" />
 		</animation>
 		<animation type="WindowOpen" reversible="false">
-			<effect type="zoom" time="transition_Open" center="screen_Center" start="130" end="100" tween="cubic" easing="out" />
+			<!-- effect type="zoom" time="transition_Open" center="screen_Center" start="130" end="100" tween="cubic" easing="out" / -->
 			<effect type="slide" start="0,-7" end="0,0" tween="Cubic" center="auto" easing="Out" time="300" />
 			<effect type="fade" start="0" end="100" time="250" tween="Quadratic" easing="Out" />
 		</animation>
 		<animation type="WindowClose" reversible="false">
-			<effect type="zoom" time="transition_Close" center="auto" start="100" end="130"  tween="cubic" easing="in" reversible="false" />
+			<!-- effect type="zoom" time="transition_Close" center="auto" start="100" end="130"  tween="cubic" easing="in" reversible="false" /-->
 			<effect type="slide" start="0,0" end="0,-7" tween="Cubic" center="auto" easing="Out" time="300" />
 			<effect type="fade" start="100" end="0" time="250" tween="Quadratic" easing="Out" />
 		</animation>
