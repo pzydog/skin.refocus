@@ -476,6 +476,26 @@
 						<onclick>ActivateWindow(Videos,movieactors)</onclick>
 						<visible>Skin.HasSetting(moviesmenu.actors)</visible>
 					</item>
+					<item id="10">
+						<label>$LOCALIZE[40103]</label>
+						<onclick>ActivateWindow(Videos,moviedirectors)</onclick>
+						<visible>Skin.HasSetting(moviesmenu.directors)</visible>
+					</item>
+					<item id="11">
+						<label>$LOCALIZE[40100]</label>
+						<onclick>ActivateWindow(Videos,moviestudios)</onclick>
+						<visible>Skin.HasSetting(moviesmenu.studios)</visible>
+					</item>
+					<item id="12">
+						<label>$LOCALIZE[40101]</label>
+						<onclick>ActivateWindow(Videos,moviesets)</onclick>
+						<visible>Skin.HasSetting(moviesmenu.sets)</visible>
+					</item>
+					<item id="13">
+						<label>$LOCALIZE[40102]</label>
+						<onclick>ActivateWindow(Videos,moviecountries)</onclick>
+						<visible>Skin.HasSetting(moviesmenu.countries)</visible>
+					</item>
 				</content>
 			</control>
 

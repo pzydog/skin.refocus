@@ -259,7 +259,14 @@ Please consider supporting the development of XBMC by making a donation.
 <string id="31991">Apply</string>
 
 <!-- mod -->
+<!-- settings -->
 <string id="40000">Debugging</string>
 <string id="40001">Show grid</string>
 <string id="40002">Show file names</string>
+
+<!-- menus -->
+<string id="40100">Studios</string>
+<string id="40101">Sets</string>
+<string id="40102">Countries</string>
+<string id="40103">Directors</string>
 </strings>

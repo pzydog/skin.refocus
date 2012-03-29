@@ -351,6 +351,38 @@
 						<selected>Skin.HasSetting(moviesmenu.actors)</selected>
 						<include>dialog_Radio</include>
 					</control>
+					<!--directors-->
+					<control type="radiobutton" id="211">
+						<label>$LOCALIZE[40103]</label>
+						<width>557</width>
+						<onclick>Skin.ToggleSetting(moviesmenu.directors)</onclick>
+						<selected>Skin.HasSetting(moviesmenu.directors)</selected>
+						<include>dialog_Radio</include>
+					</control>
+					<!--studios-->
+					<control type="radiobutton" id="212">
+						<label>$LOCALIZE[40100]</label>
+						<width>557</width>
+						<onclick>Skin.ToggleSetting(moviesmenu.studios)</onclick>
+						<selected>Skin.HasSetting(moviesmenu.studios)</selected>
+						<include>dialog_Radio</include>
+					</control>
+					<!--sets-->
+					<control type="radiobutton" id="213">
+						<label>$LOCALIZE[40101]</label>
+						<width>557</width>
+						<onclick>Skin.ToggleSetting(moviesmenu.sets)</onclick>
+						<selected>Skin.HasSetting(moviesmenu.sets)</selected>
+						<include>dialog_Radio</include>
+					</control>
+					<!--countries-->
+					<control type="radiobutton" id="214">
+						<label>$LOCALIZE[40102]</label>
+						<width>557</width>
+						<onclick>Skin.ToggleSetting(moviesmenu.countries)</onclick>
+						<selected>Skin.HasSetting(moviesmenu.countries)</selected>
+						<include>dialog_Radio</include>
+					</control>
 				</control>
 			<!--tv shows submenu-->
 				<control type="grouplist" id="200">
