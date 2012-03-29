@@ -460,8 +460,16 @@
 						<selected>Skin.HasSetting(tvshowsmenu.actors)</selected>
 						<include>dialog_Radio</include>
 					</control>
-					<!--tv guide-->
+					<!--studios-->
 					<control type="radiobutton" id="210">
+						<label>$LOCALIZE[40100]</label>
+						<width>557</width>
+						<onclick>Skin.ToggleSetting(tvshowsmenu.studios)</onclick>
+						<selected>Skin.HasSetting(tvshowsmenu.studios)</selected>
+						<include>dialog_Radio</include>
+					</control>
+					<!--tv guide-->
+					<control type="radiobutton" id="211">
 						<label>$LOCALIZE[31070]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.guide)</onclick>

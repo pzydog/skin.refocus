@@ -556,6 +556,11 @@
 						<visible>Skin.HasSetting(tvshowsmenu.actors)</visible>
 					</item>
 					<item id="9">
+						<label>$LOCALIZE[40100]</label>
+						<onclick>ActivateWindow(Videos,tvshowstudios)</onclick>
+						<visible>Skin.HasSetting(tvshowsmenu.studios)</visible>
+					</item>
+					<item id="10">
 						<label>$LOCALIZE[31070]</label>
 						<onclick>RunAddon(script.tv.show.next.aired)</onclick>
 						<visible>System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(tvshowsmenu.guide)</visible>
