@@ -291,7 +291,7 @@
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(moviesmenu.watchlist)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.watchlist)</selected>
-						<enable>!Skin.HasSetting(watchlist.disable</enable>
+						<enable>!Skin.HasSetting(watchlist.disable) + !Skin.HasSetting(homemenu.movies)</enable>
 						<include>dialog_Radio</include>
 					</control>
 					<!--recent movies-->
@@ -301,6 +301,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.recent)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.recent)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--unwatched movies-->
 					<control type="radiobutton" id="205">
@@ -309,6 +310,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.unwatched)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.unwatched)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--movies in progress-->
 					<control type="radiobutton" id="206">
@@ -317,6 +319,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.inprogress)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.inprogress)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--trailers-->
 					<control type="radiobutton" id="207">
@@ -325,7 +328,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.trailers)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.trailers)</selected>
 						<include>dialog_Radio</include>
-						<enable>System.HasAddon(plugin.video.the.trailers)</enable>
+						<enable>System.HasAddon(plugin.video.the.trailers) + !Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--genres-->
 					<control type="radiobutton" id="208">
@@ -334,6 +337,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.genres)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.genres)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--years-->
 					<control type="radiobutton" id="209">
@@ -342,6 +346,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.years)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.years)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--actors-->
 					<control type="radiobutton" id="210">
@@ -350,6 +355,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.actors)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.actors)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--directors-->
 					<control type="radiobutton" id="211">
@@ -358,6 +364,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.directors)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.directors)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--studios-->
 					<control type="radiobutton" id="212">
@@ -366,6 +373,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.studios)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.studios)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--sets-->
 					<control type="radiobutton" id="213">
@@ -374,6 +382,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.sets)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.sets)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 					<!--countries-->
 					<control type="radiobutton" id="214">
@@ -382,6 +391,7 @@
 						<onclick>Skin.ToggleSetting(moviesmenu.countries)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.countries)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.movies)</enable>
 					</control>
 				</control>
 			<!--tv shows submenu-->
@@ -409,7 +419,7 @@
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.watchlist)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.watchlist)</selected>
-						<enable>!Skin.HasSetting(watchlist.disable</enable>
+						<enable>!Skin.HasSetting(watchlist.disable) + !Skin.HasSetting(homemenu.tvshows)</enable>
 						<include>dialog_Radio</include>
 					</control>
 					<!--recent episodes-->
@@ -419,6 +429,7 @@
 						<onclick>Skin.ToggleSetting(tvshowsmenu.recent)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.recent)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--unwatched episodes-->
 					<control type="radiobutton" id="205">
@@ -427,6 +438,7 @@
 						<onclick>Skin.ToggleSetting(tvshowsmenu.unwatched)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.unwatched)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--episodes in progress-->
 					<control type="radiobutton" id="206">
@@ -435,6 +447,7 @@
 						<onclick>Skin.ToggleSetting(tvshowsmenu.inprogress)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.inprogress)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--genres-->
 					<control type="radiobutton" id="207">
@@ -443,6 +456,7 @@
 						<onclick>Skin.ToggleSetting(tvshowsmenu.genres)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.genres)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--years-->
 					<control type="radiobutton" id="208">
@@ -451,6 +465,7 @@
 						<onclick>Skin.ToggleSetting(tvshowsmenu.years)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.years)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--actors-->
 					<control type="radiobutton" id="209">
@@ -459,6 +474,7 @@
 						<onclick>Skin.ToggleSetting(tvshowsmenu.actors)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.actors)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--studios-->
 					<control type="radiobutton" id="210">
@@ -467,6 +483,7 @@
 						<onclick>Skin.ToggleSetting(tvshowsmenu.studios)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.studios)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--tv guide-->
 					<control type="radiobutton" id="211">
@@ -475,6 +492,7 @@
 						<onclick>Skin.ToggleSetting(tvshowsmenu.guide)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.guide)</selected>
 						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 				</control>
 			<!--livetv submenu-->
