@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="episodes">
+    <name>Recently Aired</name>
+    <match>all</match>
+    <rule field="playcount" operator="is">0</rule>
+    <rule field="airdate" operator="inthelast">14</rule>
+    <limit>50</limit>
+    <order direction="descending">airdate</order>
+</smartplaylist>

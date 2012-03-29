@@ -431,8 +431,17 @@
 						<include>dialog_Radio</include>
 						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
-					<!--unwatched episodes-->
+					<!--recently aired episodes-->
 					<control type="radiobutton" id="205">
+						<label>$LOCALIZE[40105]</label>
+						<width>557</width>
+						<onclick>Skin.ToggleSetting(tvshowsmenu.recentlyaired)</onclick>
+						<selected>Skin.HasSetting(tvshowsmenu.recentlyaired)</selected>
+						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
+					</control>
+					<!--unwatched episodes-->
+					<control type="radiobutton" id="206">
 						<label>$LOCALIZE[16101]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.unwatched)</onclick>
@@ -441,7 +450,7 @@
 						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--episodes in progress-->
-					<control type="radiobutton" id="206">
+					<control type="radiobutton" id="207">
 						<label>$LOCALIZE[575]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.inprogress)</onclick>
@@ -450,7 +459,7 @@
 						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--genres-->
-					<control type="radiobutton" id="207">
+					<control type="radiobutton" id="208">
 						<label>$LOCALIZE[135]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.genres)</onclick>
@@ -459,7 +468,7 @@
 						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--years-->
-					<control type="radiobutton" id="208">
+					<control type="radiobutton" id="209">
 						<label>$LOCALIZE[652]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.years)</onclick>
@@ -468,7 +477,7 @@
 						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--actors-->
-					<control type="radiobutton" id="209">
+					<control type="radiobutton" id="210">
 						<label>$LOCALIZE[344]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.actors)</onclick>
@@ -477,7 +486,7 @@
 						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--studios-->
-					<control type="radiobutton" id="210">
+					<control type="radiobutton" id="211">
 						<label>$LOCALIZE[40100]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.studios)</onclick>
@@ -486,7 +495,7 @@
 						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>
 					<!--tv guide-->
-					<control type="radiobutton" id="211">
+					<control type="radiobutton" id="212">
 						<label>$LOCALIZE[31070]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.guide)</onclick>

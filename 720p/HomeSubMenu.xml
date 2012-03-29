@@ -541,36 +541,41 @@
 						<visible>Skin.HasSetting(tvshowsmenu.recent)</visible>
 					</item>
 					<item id="4">
+						<label>$LOCALIZE[40105]</label>
+						<onclick>ActivateWindow(videolibrary,special://skin/playlists/Recently Aired.xsp,return)</onclick>
+						<visible>Skin.HasSetting(tvshowsmenu.recentlyaired)</visible>
+					</item>
+					<item id="5">
 						<label>$LOCALIZE[16101]</label>
 						<onclick>ActivateWindow(Videos,special://skin/playlists/Unwatched Episodes.xsp,return)</onclick>
 						<visible>Skin.HasSetting(tvshowsmenu.unwatched)</visible>
 					</item>
-					<item id="5">
+					<item id="6">
 						<label>$LOCALIZE[575]</label>
 						<onclick>ActivateWindow(Videos,special://skin/playlists/Episodes In Progress.xsp,return)</onclick>
 						<visible>Skin.HasSetting(tvshowsmenu.inprogress)</visible>
 					</item>
-					<item id="6">
+					<item id="7">
 						<label>$LOCALIZE[135]</label>
 						<onclick>ActivateWindow(Videos,tvshowgenres,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Skin.HasSetting(tvshowsmenu.genres)</visible>
 					</item>
-					<item id="7">
+					<item id="8">
 						<label>$LOCALIZE[652]</label>
 						<onclick>ActivateWindow(Videos,tvshowyears,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Skin.HasSetting(tvshowsmenu.years)</visible>
 					</item>
-					<item id="8">
+					<item id="9">
 						<label>$LOCALIZE[344]</label>
 						<onclick>ActivateWindow(Videos,tvshowactors,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Skin.HasSetting(tvshowsmenu.actors)</visible>
 					</item>
-					<item id="9">
+					<item id="10">
 						<label>$LOCALIZE[40100]</label>
 						<onclick>ActivateWindow(Videos,tvshowstudios,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Skin.HasSetting(tvshowsmenu.studios)</visible>
 					</item>
-					<item id="10">
+					<item id="11">
 						<label>$LOCALIZE[31070]</label>
 						<onclick>RunAddon(script.tv.show.next.aired)</onclick>
 						<visible>System.HasAddon(script.tv.show.next.aired) + Skin.HasSetting(tvshowsmenu.guide)</visible>
