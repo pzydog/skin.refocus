@@ -570,8 +570,17 @@
 						<include>dialog_Radio</include>
 						<enable>!Skin.HasSetting(homemenu.music)</enable>
 					</control>
-					<!--artists-->
+					<!--compilations-->
 					<control type="radiobutton" id="205">
+						<label>$LOCALIZE[40104]</label>
+						<width>557</width>
+						<onclick>Skin.ToggleSetting(musicmenu.compilations)</onclick>
+						<selected>Skin.HasSetting(musicmenu.compilations)</selected>
+						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.music)</enable>
+					</control>
+					<!--artists-->
+					<control type="radiobutton" id="206">
 						<label>$LOCALIZE[133]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(musicmenu.artists)</onclick>
@@ -580,7 +589,7 @@
 						<enable>!Skin.HasSetting(homemenu.music)</enable>
 					</control>
 					<!--genres-->
-					<control type="radiobutton" id="206">
+					<control type="radiobutton" id="207">
 						<label>$LOCALIZE[135]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(musicmenu.genres)</onclick>
@@ -588,8 +597,17 @@
 						<include>dialog_Radio</include>
 						<enable>!Skin.HasSetting(homemenu.music)</enable>
 					</control>
+					<!--years-->
+					<control type="radiobutton" id="208">
+						<label>$LOCALIZE[652]</label>
+						<width>557</width>
+						<onclick>Skin.ToggleSetting(musicmenu.years)</onclick>
+						<selected>Skin.HasSetting(musicmenu.years)</selected>
+						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.music)</enable>
+					</control>
 					<!--music addons-->
-					<control type="radiobutton" id="207">
+					<control type="radiobutton" id="209">
 						<label>$LOCALIZE[24001]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(musicmenu.addons)</onclick>
@@ -598,7 +616,7 @@
 						<enable>!Skin.HasSetting(homemenu.music)</enable>
 					</control>
 					<!--music playlists-->
-					<control type="radiobutton" id="208">
+					<control type="radiobutton" id="210">
 						<label>$LOCALIZE[136]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(musicmenu.playlists)</onclick>
@@ -607,7 +625,7 @@
 						<enable>!Skin.HasSetting(homemenu.music)</enable>
 					</control>
 					<!--partymode-->
-					<control type="radiobutton" id="209">
+					<control type="radiobutton" id="211">
 						<label>$LOCALIZE[589]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(musicmenu.partymode)</onclick>
@@ -616,7 +634,7 @@
 						<enable>!Skin.HasSetting(homemenu.music)</enable>
 					</control>
 					<!--lastfm-->
-					<control type="radiobutton" id="210">
+					<control type="radiobutton" id="212">
 						<label>$LOCALIZE[15200]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(musicmenu.lastfm)</onclick>
@@ -625,7 +643,7 @@
 						<enable>!Skin.HasSetting(homemenu.music)</enable>
 					</control>
 					<!--music videos-->
-					<control type="radiobutton" id="211">
+					<control type="radiobutton" id="213">
 						<label>$LOCALIZE[20389]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(musicmenu.videos)</onclick>
