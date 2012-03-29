@@ -169,6 +169,14 @@
 				<visible>Skin.HasSetting(home.search)</visible>
 				<include>button_Settings</include>
 			</control>
+			<!--back2home-->
+			<control type="radiobutton" id="109">
+				<label>$LOCALIZE[40003]</label>
+				<onclick condition="Skin.String(backtohome,return)">Skin.SetString(backtohome,)</onclick>
+				<onclick condition="!Skin.String(backtohome,return)">Skin.SetString(backtohome, return)</onclick>
+				<selected>Skin.String(backtohome,return)</selected>
+				<include>button_Settings</include>
+			</control>
 		</control>
 <!---ARTWORK------>
 		<control type="grouplist" id="600">

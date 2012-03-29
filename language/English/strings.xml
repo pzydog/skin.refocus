@@ -263,6 +263,7 @@ Please consider supporting the development of XBMC by making a donation.
 <string id="40000">Debugging</string>
 <string id="40001">Show grid</string>
 <string id="40002">Show file names</string>
+<string id="40003">Go straight back to homescreen</string>
 
 <!-- menus -->
 <string id="40100">Studios</string>
