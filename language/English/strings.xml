@@ -257,4 +257,9 @@ Please consider supporting the development of XBMC by making a donation.
 <string id="31988">Replay</string>
 <string id="31990">Recordings</string>
 <string id="31991">Apply</string>
+
+<!-- mod -->
+<string id="40000">Debugging</string>
+<string id="40001">Show grid</string>
+<string id="40002">Show file names</string>
 </strings>
