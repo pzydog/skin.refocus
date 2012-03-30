@@ -131,28 +131,18 @@
 	</include>
 
 <!---TRANSITIONS------>
-	<include name="transition_Fanart">		
-		<animation type="WindowOpen">
-			<effect type="zoom" time="transition_Open" center="auto" start="130"  end="100" tween="cubic" easing="out" reversible="false"/>
-			<effect type="fade" time="transition_Open" start="0" tween="cubic" easing="out" end="100" reversible="false"/>
-		</animation>			
-		<animation type="WindowClose">
-			<effect type="zoom" time="transition_Close" center="auto" start="100" end="130"  tween="cubic" easing="in" reversible="false" />
-			<effect type="fade" time="transition_Close" start="100" tween="cubic" easing="in" end="0" />
-		</animation>
-	</include>
 	<include name="transition_BG">
 		<animation type="WindowOpen" condition="!Skin.HasSetting(fanart.global) + !Skin.HasSetting(backgroundvideo.global)">
-			<effect type="fade" time="transition_Open" start="0" tween="cubic" easing="out" end="100" reversible="false" />
+			<effect type="fade" time="transition_Open" start="80" tween="cubic" easing="out" end="80" reversible="false" />
 		</animation>			
 		<animation type="WindowClose" condition="!Skin.HasSetting(fanart.global) + !Skin.HasSetting(backgroundvideo.global)">
-			<effect type="fade" time="transition_Close" start="100" tween="cubic" easing="in" end="0" delay="200" />
+			<effect type="fade" time="transition_Close" start="80" tween="cubic" easing="in" end="80" delay="200" />
 		</animation>
 		<animation type="WindowOpen" condition="Skin.HasSetting(fanart.global) | Skin.HasSetting(backgroundvideo.global)">
-			<effect type="fade" time="transition_Open" start="0" tween="cubic" easing="out" end="80" reversible="false" />
+			<effect type="fade" time="transition_Open" start="80" tween="cubic" easing="out" end="80" reversible="false" />
 		</animation>			
 		<animation type="WindowClose" condition="Skin.HasSetting(fanart.global) | Skin.HasSetting(backgroundvideo.global)">
-			<effect type="fade" time="transition_Close" start="80" tween="cubic" easing="in" end="0" delay="200" />
+			<effect type="fade" time="transition_Close" start="80" tween="cubic" easing="in" end="80" delay="200" />
 		</animation>
 	</include>
 	<include name="transition_Container">
