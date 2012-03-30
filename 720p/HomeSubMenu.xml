@@ -417,7 +417,7 @@
 				<include>homeMenusLayout</include>
 				<content>
 					<item id="1">
-						<label>$LOCALIZE[1024]</label>
+						<label>$LOCALIZE[40106]</label>
 						<onclick>ActivateWindow(Videos,MovieTitles,$INFO[Skin.String(backtohome)])</onclick>
 					</item>
 					<item id="2">
@@ -501,7 +501,7 @@
 				<include>homeMenusLayout</include>
 				<content>
 					<item id="1">
-						<label>$LOCALIZE[1024]</label>
+						<label>$LOCALIZE[40107]</label>
 						<onclick>ActivateWindow(Videos,tvshowtitles,$INFO[Skin.String(backtohome)])</onclick>
 					</item>
 					<item id="2">
