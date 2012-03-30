@@ -41,7 +41,7 @@
 						<visible>Library.HasContent(tvshows) + !Skin.HasSetting(homemenu.tvshows) + ![Skin.HasSetting(tvshowsmenu.watchlist) | Skin.HasSetting(tvshowsmenu.recent) | Skin.HasSetting(tvshowsmenu.unwatched) | Skin.HasSetting(tvshowsmenu.inprogress) | Skin.HasSetting(tvshowsmenu.genres) | Skin.HasSetting(tvshowsmenu.years) | Skin.HasSetting(tvshowsmenu.actors) | Skin.HasSetting(tvshowsmenu.guide)]</visible>
 					</item>
 					<item id="5">
-						<label>$LOCALIZE[1024]</label>
+						<label>$LOCALIZE[744]</label>
 						<onclick>ActivateWindow(Videos,Files)</onclick>
 					</item>
 					<item id="6">
@@ -176,7 +176,7 @@
 						<visible>Library.HasContent(music) + Skin.HasSetting(musicmenu.played)</visible>
 					</item>
 					<item id="4">
-						<label>$LOCALIZE[40104]</label>
+						<label>$LOCALIZE[521]</label>
 						<onclick>ActivateWindow(MusicLibrary,compilations,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Library.HasContent(music) + Skin.HasSetting(musicmenu.compilations)</visible>
 					</item>
@@ -463,22 +463,22 @@
 						<visible>Skin.HasSetting(moviesmenu.actors)</visible>
 					</item>
 					<item id="10">
-						<label>$LOCALIZE[40103]</label>
+						<label>$LOCALIZE[20348]</label>
 						<onclick>ActivateWindow(Videos,moviedirectors,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Skin.HasSetting(moviesmenu.directors)</visible>
 					</item>
 					<item id="11">
-						<label>$LOCALIZE[40100]</label>
+						<label>$LOCALIZE[20388]</label>
 						<onclick>ActivateWindow(Videos,moviestudios,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Skin.HasSetting(moviesmenu.studios)</visible>
 					</item>
 					<item id="12">
-						<label>$LOCALIZE[40101]</label>
+						<label>$LOCALIZE[20434]</label>
 						<onclick>ActivateWindow(Videos,moviesets,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Skin.HasSetting(moviesmenu.sets)</visible>
 					</item>
 					<item id="13">
-						<label>$LOCALIZE[40102]</label>
+						<label>$LOCALIZE[20451]</label>
 						<onclick>ActivateWindow(Videos,moviecountries,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Skin.HasSetting(moviesmenu.countries)</visible>
 					</item>
