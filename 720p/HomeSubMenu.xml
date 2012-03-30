@@ -374,62 +374,6 @@
 					</item>
 				</content>
 			</control>
-<!---EXIT SUBMENU
-			<control type="list" id="1170">
-				<posx>-800</posx>
-				<width>900</width>
-				<height>800</height>
-				<onback>9000</onback>
-				<onleft>9000</onleft>
-				<onup>1170</onup>
-				<ondown>1170</ondown>
-				<orientation>vertical</orientation>
-				<scrolltime>150</scrolltime>
-				<visible allowhiddenfocus="true">Container(9000).HasFocus(13)</visible>
-				<include>home_SubFocus</include>
-				<include>homeMenusLayout</include>
-				<content>
-					<item id="1">
-						<label>$LOCALIZE[20126]</label>
-						<onclick>system.logoff</onclick>
-					</item>
-					<item id="2">
-						<label>$LOCALIZE[13009]</label>
-						<onclick>XBMC.Quit()</onclick>
-						<visible>!System.Platform.Xbox</visible>
-					</item>
-					<item id="3">
-						<label>$LOCALIZE[13010]</label>
-						<onclick>XBMC.Hibernate</onclick>
-						<visible>System.CanHibernate</visible>
-					</item>
-					<item id="4">
-						<label>$LOCALIZE[13011]</label>
-						<onclick>XBMC.Suspend</onclick>
-						<visible>System.CanSuspend</visible>
-					</item>
-					<item id="5">
-						<label>$LOCALIZE[31928]</label>
-						<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Powerdown())</onclick>
-						<visible>!System.HasAlarm(shutdowntimer)</visible>
-					</item>
-					<item id="9">
-						<label>$LOCALIZE[13013]</label>
-						<onclick>XBMC.Reboot()</onclick>
-						<visible>!System.Platform.Xbox</visible>
-					</item>
-					<item id="5">
-						<label>$LOCALIZE[13005]</label>
-						<onclick>XBMC.ShutDown</onclick>
-					</item>
-					<item id="10">
-						<label>$LOCALIZE[13014]</label>
-						<onclick>XBMC.Minimize()</onclick>
-						<visible>!System.Platform.Xbox</visible>
-					</item>
-				</content>
-			</control>
-		------>
 <!---DISC SUBMENU------>
 			<control type="list" id="1180">
 				<posx>-800</posx>
