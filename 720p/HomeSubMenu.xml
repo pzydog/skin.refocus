@@ -271,54 +271,64 @@
 				<include>home_SubFocus</include>
 				<include>homeMenusLayout</include>
 				<content>
-					<item id="1">
+					<item id="11">
+						<label>$LOCALIZE[3]</label>
+						<onclick>ActivateWindow(VideoLibrary,Addons,return)</onclick>
+						<visible>!Skin.HasSetting(addonsmenu.video)</visible>
+					</item>
+					<item id="12">
+						<label>$LOCALIZE[2]</label>
+						<onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
+						<visible>!Skin.HasSetting(addonsmenu.music)</visible>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[0]</label>
+						<onclick>ActivateWindow(programs,addons, return)</onclick>
+						<visible>Skin.HasSetting(addonsmenu.programs)</visible>
+					</item>
+					<item id="4">
 						<label>$INFO[Skin.String(addonsmenu.addon1.label)]</label>
 						<onclick>RunAddon($INFO[Skin.String(addonsmenu.addon1.path)])</onclick>
 						<visible>!IsEmpty(Skin.String(addonsmenu.addon1.label))</visible>
 					</item>
-					<item id="2">
+					<item id="5">
 						<label>$INFO[Skin.String(addonsmenu.addon2.label)]</label>
 						<onclick>RunAddon($INFO[Skin.String(addonsmenu.addon2.path)])</onclick>
 						<visible>!IsEmpty(Skin.String(addonsmenu.addon2.label))</visible>
 					</item>
-					<item id="3">
+					<item id="6">
 						<label>$INFO[Skin.String(addonsmenu.addon3.label)]</label>
 						<onclick>RunAddon($INFO[Skin.String(addonsmenu.addon3.path)])</onclick>
 						<visible>!IsEmpty(Skin.String(addonsmenu.addon3.label))</visible>
 					</item>
-					<item id="4">
+					<item id="7">
 						<label>$INFO[Skin.String(addonsmenu.addon4.label)]</label>
 						<onclick>RunAddon($INFO[Skin.String(addonsmenu.addon4.path)])</onclick>
 						<visible>!IsEmpty(Skin.String(addonsmenu.addon4.label))</visible>
 					</item>
-					<item id="5">
+					<item id="8">
 						<label>$INFO[Skin.String(addonsmenu.addon5.label)]</label>
 						<onclick>RunAddon($INFO[Skin.String(addonsmenu.addon5.path)])</onclick>
 						<visible>!IsEmpty(Skin.String(addonsmenu.addon5.label))</visible>
 					</item>
-					<item id="6">
+					<item id="9">
 						<label>$INFO[Skin.String(addonsmenu.addon6.label)]</label>
 						<onclick>RunAddon($INFO[Skin.String(addonsmenu.addon6.path)])</onclick>
 						<visible>!IsEmpty(Skin.String(addonsmenu.addon6.label))</visible>
 					</item>
-					<item id="7">
+					<item id="10">
 						<label>$LOCALIZE[24033]</label>
 						<onclick>ActivateWindow(addonbrowser,addons://all/)</onclick>
 					</item>
-					<item id="8">
+					<item id="11">
 						<label>$LOCALIZE[24043]</label>
 						<onclick>ActivateWindow(addonbrowser,addons://outdated/)</onclick>
 						<visible>Skin.HasSetting(addonsmenu.updates)</visible>
 					</item>
-					<item id="9">
+					<item id="12">
 						<label>$LOCALIZE[24062]</label>
 						<onclick>ActivateWindow(addonbrowser,addons://enabled/)</onclick>
 						<visible>Skin.HasSetting(addonsmenu.enabled)</visible>
-					</item>
-					<item id="10">
-						<label>$LOCALIZE[0]</label>
-						<onclick>ActivateWindow(programs,addons, return)</onclick>
-						<visible>Skin.HasSetting(addonsmenu.programs)</visible>
 					</item>
 				</content>
 			</control>
