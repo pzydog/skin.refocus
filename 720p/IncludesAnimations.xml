@@ -149,10 +149,10 @@
 			<effect type="fade" time="transition_Close" start="100" tween="cubic" easing="in" end="0" delay="200" />
 		</animation>
 		<animation type="WindowOpen" condition="Skin.HasSetting(fanart.global) | Skin.HasSetting(backgroundvideo.global)">
-			<effect type="fade" time="transition_Open" start="0" tween="cubic" easing="out" end="94" reversible="false" />
+			<effect type="fade" time="transition_Open" start="0" tween="cubic" easing="out" end="80" reversible="false" />
 		</animation>			
 		<animation type="WindowClose" condition="Skin.HasSetting(fanart.global) | Skin.HasSetting(backgroundvideo.global)">
-			<effect type="fade" time="transition_Close" start="94" tween="cubic" easing="in" end="0" delay="200" />
+			<effect type="fade" time="transition_Close" start="80" tween="cubic" easing="in" end="0" delay="200" />
 		</animation>
 	</include>
 	<include name="transition_Container">
