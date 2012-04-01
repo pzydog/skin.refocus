@@ -991,7 +991,8 @@
 			<animation effect="fade" delay="4200" end="100" time="350">WindowOpen</animation>
 		</control>
 		<control type="button" id="8999">
-			<onfocus>PlayMedia(special://skin/intro/intro.m4v,1)</onfocus>
+			<onfocus condition="System.HasAddon(script.xbmc.intro.movie)">RunScript(script.xbmc.intro.movie)</onfocus>
+			<onfocus condition="!System.HasAddon(script.xbmc.intro.movie)">PlayMedia(special://skin/intro/intro.m4v,1)</onfocus>
 			<onfocus>SetFocus(10)</onfocus>
 			<label>SHOULD NOT SEE ME</label>
 			<visible allowhiddenfocus="true">false</visible>
@@ -1018,7 +1019,8 @@
 			<animation effect="fade" delay="4200" end="100" time="350">WindowOpen</animation>
 		</control>
 		<control type="button" id="8999">
-			<onfocus>PlayMedia(special://skin/intro/intro.m4v,1)</onfocus>
+			<onfocus condition="System.HasAddon(script.xbmc.intro.movie)">RunScript(script.xbmc.intro.movie)</onfocus>
+			<onfocus condition="!System.HasAddon(script.xbmc.intro.movie)">PlayMedia(special://skin/intro/intro.m4v,1)</onfocus>
 			<onfocus>SetFocus(10)</onfocus>
 			<label>SHOULD NOT SEE ME</label>
 			<visible allowhiddenfocus="true">false</visible>
