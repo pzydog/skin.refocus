@@ -231,10 +231,10 @@
 				<visible>Container.Content(tvshows) + Skin.HasSetting(gallery.extrafanart) + System.IdleTime(6)</visible>
 			</control>
 			<control type="image">
-				<posx>20</posx>
-				<posy>20</posy>
-				<width>217</width>
-				<height>84</height>
+				<posx>0</posx>
+				<posy>580</posy>
+				<width>1280</width>
+				<height>130</height>
 				<include>art_TVShowLogo</include>
 			</control>
 		</focusedlayout>
