@@ -350,10 +350,16 @@
 				<width>1280</width>
 				<height>245</height>
 				<texture border="0,0,0,15">osd/fullscreenInfo.png</texture>
+				<visible>Control.HasFocus(8000)</visible>
+				<animation effect="slide" start="0,600" end="0,0" easing="Out" tween="Quadratic" time="350">Visible</animation>
+				<animation effect="slide" start="0,0" end="0,600" easing="Out" tween="Quadratic" time="350">Hidden</animation>
 			</control>
 			<control type="group">
 				<posx>20</posx>
 				<posy>35</posy>
+				<visible>Control.HasFocus(8000)</visible>
+				<animation effect="slide" start="0,600" end="0,0" easing="Out" tween="Quadratic" time="350">Visible</animation>
+				<animation effect="slide" start="0,0" end="0,600" easing="Out" tween="Quadratic" time="350">Hidden</animation>
 				<control type="label">
 					<label>$VAR[global_Title]</label>
 					<font>osdTitle</font>
