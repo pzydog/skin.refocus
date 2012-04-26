@@ -98,7 +98,7 @@
 				<height>422</height>
 				<imagepath background="true">$INFO[ListItem.Path,,extrafanart]</imagepath>
 				<aspectratio align="center">scale</aspectratio>
-				<timeperimage>1500</timeperimage>
+				<timeperimage>6000</timeperimage>
 				<fadetime>800</fadetime>
 				<pauseatend>2000</pauseatend>
 				<randomize>false</randomize>
@@ -180,7 +180,7 @@
 		<control type="group">
 			<posy>336</posy>
 			<include>fadeinout</include>
-			<visible>Control.IsVisible(531) + System.IdleTime(3) + ![ControlGroup(6000).HasFocus() | Window.IsActive(movieinformation)]</visible>
+			<visible>Control.IsVisible(531) + System.IdleTime(6) + ![ControlGroup(6000).HasFocus() | Window.IsActive(movieinformation)]</visible>
 			<control type="image">
 				<posx>20</posx>
 				<width>48</width>
@@ -223,12 +223,12 @@
 				<include>screen_Dimensions</include>
 				<imagepath background="true">$INFO[ListItem.Path,,extrafanart]</imagepath>
 				<aspectratio align="center">scale</aspectratio>
-				<timeperimage>1500</timeperimage>
+				<timeperimage>6000</timeperimage>
 				<fadetime>800</fadetime>
 				<pauseatend>2000</pauseatend>
 				<randomize>false</randomize>
 				<loop>yes</loop>
-				<visible>Container.Content(tvshows) + Skin.HasSetting(gallery.extrafanart) + System.IdleTime(3)</visible>
+				<visible>Container.Content(tvshows) + Skin.HasSetting(gallery.extrafanart) + System.IdleTime(6)</visible>
 			</control>
 			<control type="image">
 				<posx>20</posx>
