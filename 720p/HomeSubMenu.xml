@@ -171,7 +171,7 @@
 						<visible>Library.HasContent(music) + Skin.HasSetting(musicmenu.recent)</visible>
 					</item>
 					<item id="3">
-						<label>$LOCALIZE[31971]</label>
+						<label>$LOCALIZE[517]</label>
 						<onclick>ActivateWindow(MusicLibrary,recentlyplayedalbums,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Library.HasContent(music) + Skin.HasSetting(musicmenu.played)</visible>
 					</item>
@@ -547,7 +547,7 @@
 						<visible>Skin.HasSetting(tvshowsmenu.actors)</visible>
 					</item>
 					<item id="10">
-						<label>$LOCALIZE[40100]</label>
+						<label>$LOCALIZE[20388]</label>
 						<onclick>ActivateWindow(Videos,tvshowstudios,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Skin.HasSetting(tvshowsmenu.studios)</visible>
 					</item>

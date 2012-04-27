@@ -19,7 +19,7 @@
 		</control>
 		<control type="group">
 			<posx>19</posx>
-			<posy>75</posy>		
+			<posy>75</posy>
 			<control type="image">
 				<width>762</width>
 				<include>dialog_Separator</include>
@@ -34,7 +34,7 @@
 				<width>762</width>
 				<include>dialog_Separator</include>
 			</control>
-		<!--button area------>	
+		<!--button area------>
 			<control type="grouplist" id="100">
 				<width>225</width>
 				<height>480</height>
@@ -120,7 +120,7 @@
 				</control>
 			</control>
 
-		<!---control area------>	
+		<!---control area------>
 			<control type="group">
 			<!--video submenu-->
 				<control type="grouplist" id="200">
@@ -359,7 +359,7 @@
 					</control>
 					<!--directors-->
 					<control type="radiobutton" id="211">
-						<label>$LOCALIZE[40103]</label>
+						<label>$LOCALIZE[20348]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(moviesmenu.directors)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.directors)</selected>
@@ -368,7 +368,7 @@
 					</control>
 					<!--studios-->
 					<control type="radiobutton" id="212">
-						<label>$LOCALIZE[40100]</label>
+						<label>$LOCALIZE[20388]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(moviesmenu.studios)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.studios)</selected>
@@ -377,7 +377,7 @@
 					</control>
 					<!--sets-->
 					<control type="radiobutton" id="213">
-						<label>$LOCALIZE[40101]</label>
+						<label>$LOCALIZE[20434]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(moviesmenu.sets)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.sets)</selected>
@@ -386,7 +386,7 @@
 					</control>
 					<!--countries-->
 					<control type="radiobutton" id="214">
-						<label>$LOCALIZE[40102]</label>
+						<label>$LOCALIZE[20451]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(moviesmenu.countries)</onclick>
 						<selected>Skin.HasSetting(moviesmenu.countries)</selected>
@@ -487,7 +487,7 @@
 					</control>
 					<!--studios-->
 					<control type="radiobutton" id="211">
-						<label>$LOCALIZE[40100]</label>
+						<label>$LOCALIZE[20388]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.studios)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.studios)</selected>
@@ -599,7 +599,7 @@
 					</control>
 					<!--compilations-->
 					<control type="radiobutton" id="205">
-						<label>$LOCALIZE[40104]</label>
+						<label>$LOCALIZE[521]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(musicmenu.compilations)</onclick>
 						<selected>Skin.HasSetting(musicmenu.compilations)</selected>
