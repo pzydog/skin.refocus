@@ -3,7 +3,7 @@
     <name>Recently Aired</name>
     <match>all</match>
     <rule field="playcount" operator="is">0</rule>
-    <rule field="airdate" operator="inthelast">14</rule>
+    <rule field="airdate" operator="inthelast">30</rule>
     <limit>50</limit>
     <order direction="descending">airdate</order>
 </smartplaylist>
