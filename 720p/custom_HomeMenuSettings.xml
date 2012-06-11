@@ -422,21 +422,21 @@
 						<enable>!Skin.HasSetting(watchlist.disable) + !Skin.HasSetting(homemenu.tvshows)</enable>
 						<include>dialog_Radio</include>
 					</control>
-					<!--recent episodes-->
-					<control type="radiobutton" id="204">
-						<label>$LOCALIZE[31094]</label>
-						<width>557</width>
-						<onclick>Skin.ToggleSetting(tvshowsmenu.recent)</onclick>
-						<selected>Skin.HasSetting(tvshowsmenu.recent)</selected>
-						<include>dialog_Radio</include>
-						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
-					</control>
 					<!--recently aired episodes-->
-					<control type="radiobutton" id="205">
+					<control type="radiobutton" id="204">
 						<label>$LOCALIZE[40105]</label>
 						<width>557</width>
 						<onclick>Skin.ToggleSetting(tvshowsmenu.recentlyaired)</onclick>
 						<selected>Skin.HasSetting(tvshowsmenu.recentlyaired)</selected>
+						<include>dialog_Radio</include>
+						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
+					</control>
+					<!--recently added episodes-->
+					<control type="radiobutton" id="205">
+						<label>$LOCALIZE[31094]</label>
+						<width>557</width>
+						<onclick>Skin.ToggleSetting(tvshowsmenu.recent)</onclick>
+						<selected>Skin.HasSetting(tvshowsmenu.recent)</selected>
 						<include>dialog_Radio</include>
 						<enable>!Skin.HasSetting(homemenu.tvshows)</enable>
 					</control>

@@ -512,14 +512,14 @@
 						<visible>System.HasAddon(script.watchlist) + Skin.HasSetting(tvshowsmenu.watchlist) + !Skin.HasSetting(watchlist.disable)</visible>
 					</item>
 					<item id="3">
-						<label>$LOCALIZE[31094]</label>
-						<onclick>ActivateWindow(Videos,recentlyaddedepisodes,$INFO[Skin.String(backtohome)])</onclick>
-						<visible>Skin.HasSetting(tvshowsmenu.recent)</visible>
-					</item>
-					<item id="4">
 						<label>$LOCALIZE[40105]</label>
 						<onclick>ActivateWindow(videolibrary,special://skin/playlists/Recently Aired.xsp,return)</onclick>
 						<visible>Skin.HasSetting(tvshowsmenu.recentlyaired)</visible>
+					</item>
+					<item id="4">
+						<label>$LOCALIZE[31094]</label>
+						<onclick>ActivateWindow(Videos,recentlyaddedepisodes,$INFO[Skin.String(backtohome)])</onclick>
+						<visible>Skin.HasSetting(tvshowsmenu.recent)</visible>
 					</item>
 					<item id="5">
 						<label>$LOCALIZE[16101]</label>

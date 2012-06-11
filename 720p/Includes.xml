@@ -47,7 +47,7 @@
 	<include name="global_Includes">
 		<include>global_Clock</include>
 		<include>global_Sortletter</include>
-		<include>global_Itemcount</include>	
+		<include>global_Itemcount</include>
 		<include>global_Devmode</include>
 	</include>
 	<include name="global_Itemcount">
@@ -188,7 +188,7 @@
 	<include name="scrollbar_X">
 		<showonepage>true</showonepage>
 		<height>8</height>
-		<texturesliderbackground border="8,1,8,1">views/scrollBackgroundHorizontal.png</texturesliderbackground>		
+		<texturesliderbackground border="8,1,8,1">views/scrollBackgroundHorizontal.png</texturesliderbackground>
 		<texturesliderbar border="10,1,10,1">views/scrollbarGripHorizontal.png</texturesliderbar>
 		<texturesliderbarfocus border="10,1,10,1">views/scrollbarGripHorizontal-focus.png</texturesliderbarfocus>
 		<textureslidernib border="1">-</textureslidernib>
@@ -723,11 +723,10 @@
 
 <!---OSD / SLIDESHOW------>
 	<include name="osd_Info">
-		<control type="group" id="1">			
+		<control type="group" id="1">
 			<include>transition_OSD</include>
 			<posx>35</posx>
 			<posy>0</posy>
-			<animation effect="slide" start="0,0" end="0,42" time="0" condition="Player.HasAudio | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(files)">Conditional</animation>
 			<visible>[Window.IsVisible(fullscreenvideo) | Window.IsActive(visualisation)] + ![Window.IsActive(visualisationpresetlist) | Window.IsActive(videoosd) | Window.IsVisible(bookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide) | Window.IsActive(script-XBMC_Lyrics-main.xml)]</visible>
 			<control type="image" id="1">
 				<width>640</width>
@@ -839,7 +838,6 @@
 				<control type="group" id="1">
 					<posy>300</posy>
 					<width>592</width>
-					<animation effect="slide" start="0,0" end="0,-44" time="0" condition="Player.HasAudio | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(files)">Conditional</animation>
 					<control type="progress" id="1">
 						<height>4</height>
 						<texturebg>osd/osdProgressBg.png</texturebg>
@@ -911,7 +909,7 @@
 			</control>
 		</control>
 	</include>
-	
+
 
 <!---WINDOW TITLES------->
 	<include name="windowTitle">
@@ -931,7 +929,7 @@
 			<label>$VAR[window_Title.Video]</label>
 			<include>windowTitle</include>
 		</control>
-	</include>		
+	</include>
 	<include name="windowTitle_Music">
 		<control type="label">
 			<label>$VAR[window_Title.Music]</label>
