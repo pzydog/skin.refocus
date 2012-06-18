@@ -764,7 +764,7 @@
 				</control>
 				<control type="label" id="1">
 					<width>592</width>
-					<posy>96</posy>
+					<posy>128</posy>
 					<label>$LOCALIZE[209]: $INFO[MusicPlayer.Offset(1).Artist,]$INFO[MusicPlayer.Offset(1).Title, - ] ($INFO[MusicPlayer.PlaylistPosition,]$INFO[MusicPlayer.PlaylistLength,/])</label>
 					<textcolor>Color3</textcolor>
 					<font>smallerCaps</font>
@@ -808,6 +808,7 @@
 					<posx>178r</posx>
 					<posy>249</posy>
 					<height>34</height>
+					<visible>Player.HasVideo</visible>
 					<texture>$INFO[VideoPlayer.AudioCodec,flags/codec/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
@@ -815,28 +816,26 @@
 					<posx>73r</posx>
 					<posy>249</posy>
 					<height>34</height>
+					<visible>Player.HasVideo</visible>
 					<texture>$INFO[VideoPlayer.AudioChannels,flags/audio/,.png]</texture>
 					<aspectratio align="center">keep</aspectratio>
 				</control>
 				<control type="image" id="1">
-					<posx>25r</posx>
-					<posy>249</posy>
-					<width>82</width>
+					<posx>158r</posx>
+					<posy>169</posy>
 					<height>34</height>
 					<aspectratio align="right">keep</aspectratio>
+					<visible>Player.HasAudio</visible>
 					<texture>flags/codec/$INFO[MusicPlayer.Codec,,.png]</texture>
 				</control>
 				<!---progress------>
-				<control type="label" id="1">
-					<posy>0</posy>
-					<label>$INFO[Player.Time]$INFO[Player.Duration, / ]</label>
-					<textcolor>Color3</textcolor>
-					<font>osdTitle</font>
-					<include>info_Sub</include>
-					<visible>Player.HasAudio</visible>
-				</control>
 				<control type="group" id="1">
-					<posy>300</posy>
+					<animation type="Conditional" condition="Player.HasAudio">
+						<effect type="slide" start="0,210" end="0,210" time="1"/>
+					</animation>
+					<animation type="Conditional" condition="Player.HasVideo">
+						<effect type="slide" start="0,290" end="0,290" time="1"/>
+					</animation>
 					<width>592</width>
 					<control type="progress" id="1">
 						<height>4</height>
@@ -890,21 +889,33 @@
 					<visible>VideoPlayer.Content(livetv)</visible>
 				</control>
 				<control type="image" id="1">
-					<posx>-22</posx>
-					<posy>300</posy>
-					<height>250</height>
-					<width>175</width>
+					<posx>-67</posx>
+					<posy>295</posy>
+					<height>290</height>
+					<width>300</width>
 					<info>VideoPlayer.Cover</info>
 					<bordertexture border="40">frames/frame_Square.png</bordertexture>
 					<aspectratio aligny="bottom">keep</aspectratio>
 					<bordersize>22</bordersize>
-					<visible>VideoPlayer.Content(movies)</visible>
+					<visible>Player.HasVideo + VideoPlayer.Content(movies)</visible>
 				</control>
 				<control type="image" id="1">
-					<posy>450</posy>
-					<width>145</width>
+					<posx>-22</posx>
+					<posy>205</posy>
+					<height>350</height>
+					<width>420</width>
+					<info>VideoPlayer.Cover</info>
+					<bordertexture border="40">frames/frame_Square.png</bordertexture>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<bordersize>22</bordersize>
+					<visible>Player.HasVideo + VideoPlayer.Content(episodes)</visible>
+				</control>
+				<control type="image" id="1">
+					<posy>215</posy>
+					<width>205</width>
 					<texture>$INFO[MusicPlayer.Cover]</texture>
-					<aspectratio align="center">stretch</aspectratio>
+					<aspectratio align="center">keep</aspectratio>
+					<visible>Player.HasAudio</visible>
 				</control>
 			</control>
 		</control>
