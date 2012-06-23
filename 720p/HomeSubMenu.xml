@@ -26,7 +26,7 @@
 					</item>
 					<item id="2">
 						<label>$LOCALIZE[342]</label>
-						<onclick>ActivateWindow(MyVideoLibrary,movietitles)</onclick>
+						<onclick>ActivateWindow(MyVideoLibrary,movietitles,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Library.HasContent(movies) + !Skin.HasSetting(homemenu.movies) + ![Skin.HasSetting(moviesmenu.watchlist) | Skin.HasSetting(moviesmenu.recent) | Skin.HasSetting(moviesmenu.unwatched) | Skin.HasSetting(moviesmenu.inprogress) | Skin.HasSetting(moviesmenu.trailers) | Skin.HasSetting(moviesmenu.genres) | Skin.HasSetting(moviesmenu.years) | Skin.HasSetting(moviesmenu.actors)]</visible>
 					</item>
 					<!--tv shows-->
@@ -37,7 +37,7 @@
 					</item>
 					<item id="4">
 						<label>$LOCALIZE[20343]</label>
-						<onclick>ActivateWindow(MyVideoLibrary,tvshowtitles)</onclick>
+						<onclick>ActivateWindow(MyVideoLibrary,tvshowtitles,$INFO[Skin.String(backtohome)])</onclick>
 						<visible>Library.HasContent(tvshows) + !Skin.HasSetting(homemenu.tvshows) + ![Skin.HasSetting(tvshowsmenu.watchlist) | Skin.HasSetting(tvshowsmenu.recent) | Skin.HasSetting(tvshowsmenu.unwatched) | Skin.HasSetting(tvshowsmenu.inprogress) | Skin.HasSetting(tvshowsmenu.genres) | Skin.HasSetting(tvshowsmenu.years) | Skin.HasSetting(tvshowsmenu.actors) | Skin.HasSetting(tvshowsmenu.guide)]</visible>
 					</item>
 					<item id="5">
